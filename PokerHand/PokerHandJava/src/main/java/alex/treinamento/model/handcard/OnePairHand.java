@@ -1,5 +1,7 @@
 package alex.treinamento.model.handcard;
 
+import alex.treinamento.model.Card;
+
 import java.util.List;
 
 /**
@@ -7,7 +9,8 @@ import java.util.List;
  */
 public class OnePairHand extends BaseNoHigherHand {
 
-    private List<Pair> mPairs;
+    private Pair mPair;
+    private Card higherCard;
 
     @Override
     public HandCard generateFromSpec(SpecHand specHand) {
@@ -15,7 +18,12 @@ public class OnePairHand extends BaseNoHigherHand {
         if (pairs == null || pairs.isEmpty() || pairs.size() > 1){
             return null;
         }
-        mPairs = pairs;
+
+        mPair = pairs.get(0);
+        higherCard = mPair.getCard1();
+        if (mPair.getCard2().isHigherThan(higherCard)){
+            higherCard = mPair.getCard1();
+        }
 
         return this;
     }
@@ -24,4 +32,5 @@ public class OnePairHand extends BaseNoHigherHand {
     public HandType getType() {
         return HandType.ONE_PAIR;
     }
+
 }

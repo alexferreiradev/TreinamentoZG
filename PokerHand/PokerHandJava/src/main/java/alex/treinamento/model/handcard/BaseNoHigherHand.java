@@ -7,7 +7,7 @@ import alex.treinamento.model.Card;
  */
 public abstract class BaseNoHigherHand implements NoHigherHand{
 
-    protected Card higherCard;
+    protected Kicker kicker;
 
     @Override
     public boolean isHigherThan(HandCard hand) {

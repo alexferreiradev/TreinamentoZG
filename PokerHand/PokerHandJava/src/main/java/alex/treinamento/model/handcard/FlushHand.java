@@ -10,10 +10,12 @@ import java.util.List;
  */
 public class FlushHand extends BaseNoHigherHand {
 
+    private Sequence sequence;
+
     @Override
     public HandCard generateFromSpec(SpecHand specHand) {
         List<Card> cards = specHand.getCards();
-        Sequence sequence = specHand.retrieveSequence();
+        sequence = specHand.retrieveSequence();
         if (sequence != null && sequence.isComplete() || !HandUtil.isSameSuit(cards)){
             return null;
         }

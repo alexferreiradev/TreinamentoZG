@@ -2,11 +2,10 @@ package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
 import alex.treinamento.model.CardValue;
-import alex.treinamento.model.handcard.util.HandUtil;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by alexferreira on 07/06/17.
@@ -23,8 +22,8 @@ public class Group {
         }
 
         this.cards = new ArrayList<>(cards);
-        this.value = cards.get(0).getValueType();
-        this.length = cards.size();
+        this.value = null;
+        this.length = 0;
     }
 
     /**
@@ -33,39 +32,37 @@ public class Group {
      * @return - cartas que não formam grupo.
      */
     public List<Card> retrieveGroup(){
-        Collection<Card> withoutGroup = new ArrayList<>();
-        List<Card> cardsAux = new ArrayList<>(this.cards);
-        boolean hasPair = false;
-        Card lastCard = null;
-        cards.clear();
-        for (Card card:cardsAux) {
-            if (lastCard ==  null){
-                lastCard = card;
+        List<Card> withoutGroup = new ArrayList<>();
+        Stack<Card> groupStack = new Stack<>();
+        Stack<Card> auxStack = new Stack<>();
+        auxStack.addAll(cards);
+        while (!auxStack.isEmpty()){
+            if (groupStack.isEmpty()){
+                groupStack.add(auxStack.pop());
                 continue;
             }
 
-            if (lastCard.getValueType() == card.getValueType()){
-                hasPair = true;
-                this.cards.add(lastCard);
-            } else{
-                withoutGroup.addAll(cards);
-                if (hasPair){
-                    hasPair = false;
-                    this.cards.clear();
-                }
+            Card pop = auxStack.pop();
+            if (pop.getValueType() == groupStack.peek().getValueType()){
+                groupStack.add(pop);
+            } else if (groupStack.size() > 2){
+                withoutGroup.add(pop);
+            } else {
+                withoutGroup.addAll(groupStack);
+                groupStack.clear();
+                groupStack.add(pop);
             }
-
-            lastCard = card;
         }
 
-        lastCard = HandUtil.getLastCard(cardsAux);
-        if (hasPair){
-            cards.add(lastCard);
-        }else{
-            withoutGroup.add(lastCard);
+        cards.clear();
+        if (groupStack.size() > 2){
+            cards.addAll(groupStack);
+        } else{
+            withoutGroup.addAll(groupStack);
         }
+        length = cards.size();
 
-        return (List<Card>) withoutGroup;
+        return withoutGroup;
     }
 
     public CardValue getValue() {
