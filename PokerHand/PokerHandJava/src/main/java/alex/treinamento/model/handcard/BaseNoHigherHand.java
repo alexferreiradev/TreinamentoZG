@@ -22,7 +22,7 @@ public abstract class BaseNoHigherHand implements NoHigherHand{
 
     @Override
     public boolean isSameThan(HandCard handCard) {
-        return handCard.getType().isSameThan(handCard.getType());
+        return getType().isSameThan(handCard.getType());
     }
 
     @Override
