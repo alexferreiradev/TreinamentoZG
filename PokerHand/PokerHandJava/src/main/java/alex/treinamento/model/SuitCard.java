@@ -3,7 +3,7 @@ package alex.treinamento.model;
 /**
  * Created by alexferreira on 06/06/17.
  */
-public enum SuitCard {
+public enum SuitCard implements ComparableModel<SuitCard> {
 
     HEART ("H"),
     SPADES ("S"),
@@ -27,9 +27,16 @@ public enum SuitCard {
         return null;
     }
 
+    @Override
     public boolean isHigherThan(SuitCard suitCard){
         return this.ordinal() > suitCard.ordinal() ? true : false;
     }
+
+    @Override
+    public boolean isSameThan(SuitCard comparable) {
+        return this == comparable ? true : false;
+    }
+
 
     public String getValue() {
         return value;

@@ -2,6 +2,7 @@ package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
 import alex.treinamento.model.CardValue;
+import alex.treinamento.model.ComparableModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by alexferreira on 07/06/17.
  */
-public class Sequence {
+public class Sequence implements ComparableModel<Sequence>, ValidSpecification {
 
     private List<Card> cards;
     private CardValue initValue;
@@ -24,7 +25,7 @@ public class Sequence {
         this.cards = new ArrayList<>(cards);
         this.initValue = cards.get(0).getValueType();
         this.isAllSameSuit = true;
-        this.length = 1;
+        this.length = -1;
     }
 
     private int extractPosSeq(List<Card> cards, int pos){
@@ -45,30 +46,16 @@ public class Sequence {
         return initValue;
     }
 
-    public void setInitValue(CardValue initValue) {
-        this.initValue = initValue;
-    }
-
     public int extractLength() {
-        if (cards.size() < 2){
-            return length;
+        if (length == -1){
+            length = extractPosSeq(cards, 1) + 1;
         }
-
-        length = extractPosSeq(cards, 1) + 1;
 
         return length;
     }
 
-    public void setLength(int length) {
-        this.length = length;
-    }
-
     public boolean isAllSameSuit() {
         return isAllSameSuit;
-    }
-
-    public void setAllSameSuit(boolean allSameSuit) {
-        isAllSameSuit = allSameSuit;
     }
 
     @Override
@@ -104,11 +91,18 @@ public class Sequence {
         return cards;
     }
 
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
+    @Override
+    public boolean isHigherThan(Sequence comparable) {
+        return initValue.isHigherThan(comparable.getInitValue());
     }
 
-    public boolean isComplete() {
+    @Override
+    public boolean isSameThan(Sequence comparable) {
+        return initValue.isSameThan(comparable.getInitValue());
+    }
+
+    @Override
+    public boolean isValid() {
         return extractLength() == 5 ? true : false;
     }
 }

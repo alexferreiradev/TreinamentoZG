@@ -3,7 +3,7 @@ package alex.treinamento.model;
 /**
  * Created by alexferreira on 06/06/17.
  */
-public enum CardValue {
+public enum CardValue implements ComparableModel<CardValue> {
 
     TWO ("2"),
     THREE ("3"),
@@ -35,8 +35,14 @@ public enum CardValue {
         return null;
     }
 
+    @Override
     public boolean isHigherThan(CardValue cardValue){
         return this.ordinal() > cardValue.ordinal() ? true : false;
+    }
+
+    @Override
+    public boolean isSameThan(CardValue comparable) {
+        return this == comparable ? true : false;
     }
 
     public String getValue() {

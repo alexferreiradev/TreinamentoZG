@@ -2,11 +2,12 @@ package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
 import alex.treinamento.model.CardValue;
+import alex.treinamento.model.ComparableModel;
 
 /**
  * Created by alexferreira on 07/06/17.
  */
-public class Pair {
+public class Pair implements ComparableModel<Pair>{
 
     private final Card card1;
     private final Card card2;
@@ -28,10 +29,6 @@ public class Pair {
 
     public CardValue getValue() {
         return value;
-    }
-
-    public void setValue(CardValue value) {
-        this.value = value;
     }
 
     @Override
@@ -61,5 +58,15 @@ public class Pair {
                 ", card2=" + card2 +
                 ", value=" + value +
                 '}';
+    }
+
+    @Override
+    public boolean isHigherThan(Pair comparable) {
+        return value.isHigherThan(comparable.getValue());
+    }
+
+    @Override
+    public boolean isSameThan(Pair comparable) {
+        return value.isSameThan(comparable.getValue());
     }
 }

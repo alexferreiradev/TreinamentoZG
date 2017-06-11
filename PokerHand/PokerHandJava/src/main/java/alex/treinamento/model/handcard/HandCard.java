@@ -1,20 +1,24 @@
 package alex.treinamento.model.handcard;
 
+import alex.treinamento.model.ComparableModel;
+
 /**
  * Created by alexferreira on 06/06/17.
  */
-public interface HandCard {
+public interface HandCard extends ComparableModel<HandCard>{
 
-    boolean isHigherThan(HandCard hand);
+
 
     /**
      * Gera uma mao de acordo com a specificação passada.
      *
-     * @param specHand
+//     * @param specHand
      * @return - null caso a especificação não ser adequada para gerar.
      */
-    HandCard generateFromSpec(SpecHand specHand);
+//    HandCard generateFromSpec(SpecHand specHand);
 
     HandType getType();
+
+    HandSpecification getSpecification();
 
 }

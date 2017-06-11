@@ -1,14 +1,15 @@
 package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
+import alex.treinamento.model.ComparableModel;
+import alex.treinamento.model.handcard.util.HandUtil;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by alexferreira on 07/06/17.
  */
-public class Kicker {
+public class Kicker implements ComparableModel<Kicker>{
 
     private List<Card> cards;
 
@@ -18,10 +19,6 @@ public class Kicker {
 
     public List<Card> getCards() {
         return cards;
-    }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
     }
 
     @Override
@@ -44,5 +41,24 @@ public class Kicker {
         return "Kicker{" +
                 "cards=" + cards +
                 '}';
+    }
+
+    @Override
+    public boolean isHigherThan(Kicker comparable) {
+        Queue<? extends ComparableModel> baseComparatives = new ArrayDeque<>(cards);
+        Queue<? extends ComparableModel> comparableModels = new ArrayDeque<>(comparable.getCards());
+        if (HandUtil.isHigherModel(baseComparatives, comparableModels)){
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean isSameThan(Kicker comparable) {
+        Queue<? extends ComparableModel> baseComparatives = new ArrayDeque<>(cards);
+        Queue<? extends ComparableModel> comparableModels = new ArrayDeque<>(comparable.getCards());
+
+        return HandUtil.isSameModel(baseComparatives, comparableModels);
     }
 }

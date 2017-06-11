@@ -3,7 +3,7 @@ package alex.treinamento.model;
 /**
  * Created by alexferreira on 06/06/17.
  */
-public class Card implements Comparable{
+public class Card implements ComparableModel<Card>, Comparable<Card> {
 
     private SuitCard suitType;
     private CardValue valueType;
@@ -17,20 +17,17 @@ public class Card implements Comparable{
         return suitType;
     }
 
-    public void setSuitType(SuitCard suitType) {
-        this.suitType = suitType;
-    }
-
     public CardValue getValueType() {
         return valueType;
     }
 
-    public void setValueType(CardValue valueType) {
-        this.valueType = valueType;
-    }
-
     public boolean isHigherThan(Card card){
         return this.getValueType().isHigherThan(card.getValueType()) ? true : false;
+    }
+
+    @Override
+    public boolean isSameThan(Card comparable) {
+        return getValueType().isSameThan(comparable.getValueType());
     }
 
     @Override
@@ -60,19 +57,14 @@ public class Card implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        Card comparingCard = null;
-        if (o.getClass() == Card.class){
-            comparingCard = (Card) o;
-        }
-
-        boolean higherThan = this.valueType.isHigherThan(comparingCard.getValueType());
-        if (this.valueType == comparingCard.getValueType()){
+    public int compareTo(Card card) {
+        if (isSameThan(card)){
             return 0;
-        } else if (!higherThan){
-            return -1;
+        } else if (isHigherThan(card)){
+            return 1;
         }
 
-        return 1;
+        return -1;
     }
+
 }

@@ -38,8 +38,8 @@ public class PokerHand {
             cards.add(card);
         }
 
-        HandFactory handFactory = new HandFactory(new SpecHand(cards));
-        handCard = handFactory.build();
+        HandFactory handFactory = new HandFactory();
+        handCard = handFactory.build(new SpecHand(cards));
     }
 
     public ResultHand compareWith(PokerHand hand){

@@ -2,15 +2,16 @@ package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
 import alex.treinamento.model.CardValue;
+import alex.treinamento.model.ComparableModel;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by alexferreira on 07/06/17.
  */
-public class Group {
+public class Group implements ComparableModel<Group>, ValidSpecification {
+
+    public static final int MIN_GROUP_SIZE = 2;
 
     private CardValue value;
     private int length;
@@ -29,10 +30,11 @@ public class Group {
     /**
      * Remove as cartas que nao formam grupo.
      *
-     * @return - cartas que não formam grupo.
+     * @return - cartas que não formam grupo ordenadas de maior para menor.
      */
-    public List<Card> retrieveGroup(){
-        List<Card> withoutGroup = new ArrayList<>();
+    public Queue<Card> retrieveGroup(){
+        Queue<Card> withoutGroup = new ArrayDeque<>();
+        Stack<Card> withoutGroupStack = new Stack<>();
         Stack<Card> groupStack = new Stack<>();
         Stack<Card> auxStack = new Stack<>();
         auxStack.addAll(cards);
@@ -45,23 +47,25 @@ public class Group {
             Card pop = auxStack.pop();
             if (pop.getValueType() == groupStack.peek().getValueType()){
                 groupStack.add(pop);
-            } else if (groupStack.size() > 2){
-                withoutGroup.add(pop);
+            } else if (groupStack.size() > MIN_GROUP_SIZE){
+                withoutGroupStack.add(pop);
             } else {
-                withoutGroup.addAll(groupStack);
+                withoutGroupStack.addAll(groupStack);
                 groupStack.clear();
                 groupStack.add(pop);
             }
         }
 
         cards.clear();
-        if (groupStack.size() > 2){
+        if (groupStack.size() > MIN_GROUP_SIZE){
             cards.addAll(groupStack);
+            value = groupStack.peek().getValueType();
         } else{
-            withoutGroup.addAll(groupStack);
+            withoutGroupStack.addAll(groupStack);
         }
         length = cards.size();
 
+        withoutGroup.addAll(withoutGroupStack);
         return withoutGroup;
     }
 
@@ -116,5 +120,20 @@ public class Group {
                 ", length=" + length +
                 ", cards=" + cards +
                 '}';
+    }
+
+    @Override
+    public boolean isHigherThan(Group comparable) {
+        return value.isHigherThan(comparable.getValue());
+    }
+
+    @Override
+    public boolean isSameThan(Group comparable) {
+        return value == comparable.getValue() && length == comparable.getLength() ? true : false;
+    }
+
+    @Override
+    public boolean isValid() {
+        return length > MIN_GROUP_SIZE ? true : false;
     }
 }

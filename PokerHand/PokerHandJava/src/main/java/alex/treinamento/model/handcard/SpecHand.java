@@ -1,51 +1,75 @@
 package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
+import alex.treinamento.model.handcard.util.HandUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by alexferreira on 08/06/17.
  */
-public class SpecHand {
+public class SpecHand implements HandSpecification{
 
     private Sequence sequence;
     private Group group;
     private Kicker kicker;
     private List<Pair> pairs;
     private List<Card> cards;
+    private boolean isSameSuit;
 
     public SpecHand(List<Card> cards) {
-        this.cards = cards;
-        Collections.sort(cards);
+        this.cards = new ArrayList<>(cards);
+        Collections.sort(this.cards);
+        isSameSuit = HandUtil.isSameSuit(this.cards);
+        sequence = new Sequence(this.cards);
+        group = new Group(this.cards);
+        pairs = new ArrayList<>();
+        processKicker();
     }
 
-    public Sequence retrieveSequence(){
-        this.sequence = new Sequence(cards);
-        return this.sequence;
+    @Override
+    public boolean hasGroup() {
+        return group.isValid();
     }
 
-    public Group retrieveGroup(){
+    @Override
+    public boolean hasSequence() {
+        return sequence.isValid();
+    }
+
+    @Override
+    public boolean hasPairs() {
+        return pairs.size() > 0 ? true : false;
+    }
+
+    @Override
+    public boolean isAllCardsSameSuit() {
+        return isSameSuit;
+    }
+
+    @Override
+    public Sequence getSequence(){
+        return sequence;
+    }
+
+    @Override
+    public Group getGroup(){
         if (group == null){
             processKicker();
         }
-        return this.group;
+        return group;
     }
 
-    public List<Pair> retrievePairs(){
-        if (pairs == null){
-            processKicker();
-        }
+    @Override
+    public List<Pair> getPairs(){
         return pairs;
     }
 
-    public Kicker retrieveKicker(){
-        if (kicker == null){
-            processKicker();
-        }
-
+    @Override
+    public Kicker getKicker(){
         return kicker;
     }
 
@@ -54,7 +78,7 @@ public class SpecHand {
      *
      */
     private void processKicker() {
-        List<Card> withoutGroup = new Group(this.cards).retrieveGroup();
+        Queue<Card> withoutGroup = group.retrieveGroup();
         Card lastCard = null;
         List<Card> kickers = new ArrayList<>();
         pairs = new ArrayList<>();
@@ -71,31 +95,11 @@ public class SpecHand {
             }
         }
 
-        kicker = new Kicker(withoutGroup);
+        kicker = new Kicker(kickers);
     }
 
     public List<Card> getCards() {
         return cards;
-    }
-
-    public void setSequence(Sequence sequence) {
-        this.sequence = sequence;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-
-    public void setPairs(List<Pair> pairs) {
-        this.pairs = pairs;
-    }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
-    }
-
-    public void setKicker(Kicker kicker) {
-        this.kicker = kicker;
     }
 
     @Override
