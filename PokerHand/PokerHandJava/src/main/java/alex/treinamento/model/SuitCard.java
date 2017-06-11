@@ -5,10 +5,10 @@ package alex.treinamento.model;
  */
 public enum SuitCard implements ComparableModel<SuitCard> {
 
-    HEART ("H"),
-    SPADES ("S"),
     DIAMOND ("D"),
+    SPADES ("S"),
     CLUBS ("C"),
+    HEART ("H"),
     ;
 
     private String value;
