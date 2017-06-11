@@ -15,13 +15,15 @@ public class HandFactory {
 
         if (specification.hasSequence()){
             Sequence sequence = specification.getSequence();
-            if (sequence.getInitValue().isSameThan(CardValue.TEN)){
-                return HandType.ROYAL_FLUSH.getHandCard(specification);
-            } else if (specification.isAllCardsSameSuit()){
+            if (sequence.isAllSameSuit()){
+                if (sequence.getInitValue().isSameThan(CardValue.TEN)){
+                    return HandType.ROYAL_FLUSH.getHandCard(specification);
+                }
+
                 return HandType.STRAIGHT_FLUSH.getHandCard(specification);
-            } else {
-                return HandType.SEQUENCE.getHandCard(specification);
             }
+
+            return HandType.SEQUENCE.getHandCard(specification);
         } else if (specification.hasGroup()){
             Group group = specification.getGroup();
             if (group.getLength() == FourKindHand.GROUP_LENGTH){
