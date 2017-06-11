@@ -3,10 +3,7 @@ package alex.treinamento.model.handcard;
 import alex.treinamento.model.Card;
 import alex.treinamento.model.handcard.util.HandUtil;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by alexferreira on 08/06/17.
@@ -79,21 +76,17 @@ public class SpecHand implements HandSpecification{
      */
     private void processKicker() {
         Queue<Card> withoutGroup = group.retrieveGroup();
-        Card lastCard = null;
         List<Card> kickers = new ArrayList<>();
         pairs = new ArrayList<>();
-        for (Card card:withoutGroup) {
-            if (lastCard == null){
-                lastCard = card;
-                continue;
-            }
-
-            if (lastCard.getValueType() == card.getValueType()){
-                pairs.add(new Pair(lastCard, card));
+        while(!withoutGroup.isEmpty() && withoutGroup.size() > 1){
+            Card poll = withoutGroup.poll();
+            if (poll.isSameThan(withoutGroup.peek())){
+                pairs.add(new Pair(withoutGroup.poll()));
             } else {
-                kickers.add(lastCard);
+                kickers.add(poll);
             }
         }
+        kickers.addAll(withoutGroup);
 
         kicker = new Kicker(kickers);
     }
