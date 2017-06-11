@@ -25,11 +25,9 @@ public class TwoPairHand extends BaseNoHigherHand {
     @Override
     public boolean winInDrawFrom(HandCard hand) {
         // maior par, maior kicker
-        List<Pair> mPairs = specification.getPairs();
-        Deque<Pair> pairs = (Deque<Pair>) hand.getSpecification().getPairs();
 
-        Queue<? extends ComparableModel> baseComparatives = new ArrayDeque<>(mPairs);
-        Queue<? extends ComparableModel> comparableModels = new ArrayDeque<>(pairs);
+        Queue<? extends ComparableModel> baseComparatives = new ArrayDeque<>(specification.getPairs());
+        Queue<? extends ComparableModel> comparableModels = new ArrayDeque<>(hand.getSpecification().getPairs());
         if (HandUtil.isHigherModel(baseComparatives, comparableModels)){
             return true;
         }
