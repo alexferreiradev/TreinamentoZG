@@ -7,21 +7,21 @@ import alex.treinamento.model.handcard.hand.*;
  * Created by alexferreira on 07/06/17.
  */
 public enum HandType implements ComparableModel<HandType>{
-    ROYAL_FLUSH,
-    STRAIGHT_FLUSH,
-    FOUR_KIND,
-    FULL_HOUSE,
-    FLUSH,
-    SEQUENCE,
-    THREE_KIND,
-    TWO_PAIR,
-    ONE_PAIR,
     HIGH_CARD,
+    ONE_PAIR,
+    TWO_PAIR,
+    THREE_KIND,
+    SEQUENCE,
+    FLUSH,
+    FULL_HOUSE,
+    FOUR_KIND,
+    STRAIGHT_FLUSH,
+    ROYAL_FLUSH,
     ;
 
     @Override
     public boolean isHigherThan(HandType handType){
-        return this.ordinal() > handType.ordinal() ? true : false;
+        return this.ordinal() > handType.ordinal();
     }
 
     @Override
