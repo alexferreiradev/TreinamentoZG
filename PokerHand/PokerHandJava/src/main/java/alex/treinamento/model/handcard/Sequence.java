@@ -25,14 +25,17 @@ public class Sequence implements ComparableModel<Sequence>, ValidSpecification {
         this.cards = new ArrayList<>(cards);
         this.initValue = cards.get(0).getValueType();
         this.isAllSameSuit = true;
-        this.length = -1;
+        this.length = extractPosSeq(cards, 0) + 1;
     }
 
     private int extractPosSeq(List<Card> cards, int pos){
         Card card = cards.get(pos);
-        Card nextCard = cards.get(pos);
+        if (pos + 1 == cards.size()){
+            return pos;
+        }
+        Card nextCard = cards.get(pos + 1);
         if (card.getValueType().ordinal() + 1 == nextCard.getValueType().ordinal()){
-            if (isAllSameSuit && card.getSuitType() != nextCard.getSuitType() && pos == cards.size() - 1){
+            if (isAllSameSuit && !card.getSuitType().isSameThan(nextCard.getSuitType())){
                 isAllSameSuit = false;
             }
 
@@ -46,11 +49,7 @@ public class Sequence implements ComparableModel<Sequence>, ValidSpecification {
         return initValue;
     }
 
-    public int extractLength() {
-        if (length == -1){
-            length = extractPosSeq(cards, 1) + 1;
-        }
-
+    public int getLength() {
         return length;
     }
 
@@ -103,6 +102,6 @@ public class Sequence implements ComparableModel<Sequence>, ValidSpecification {
 
     @Override
     public boolean isValid() {
-        return extractLength() == 5 ? true : false;
+        return length == 5;
     }
 }
