@@ -1,4 +1,4 @@
-package alex.treinamento.bussiness;
+package alex.treinamento.service;
 
 import alex.treinamento.model.Card;
 import alex.treinamento.model.CardValue;
