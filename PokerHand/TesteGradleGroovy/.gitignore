@@ -24,17 +24,7 @@
 hs_err_pid*
 
 .gradle/
-.idea/compiler.xml
-.idea/gradle.xml
-.idea/libraries/
-.idea/misc.xml
-.idea/modules.xml
-.idea/modules/TesteGradleGroovy_main.iml
-.idea/modules/TesteGradleGroovy_test.iml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/
 gradle/
 gradlew
 gradlew.bat
-/.idea/
-/.gradle/
