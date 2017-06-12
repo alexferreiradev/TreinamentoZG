@@ -1,6 +1,6 @@
 package alex.treinamento;
 
-import alex.treinamento.bussiness.PokerHand;
+import alex.treinamento.service.PokerHand;
 import alex.treinamento.model.ResultHand;
 import junit.framework.TestCase;
 import org.junit.Test;
