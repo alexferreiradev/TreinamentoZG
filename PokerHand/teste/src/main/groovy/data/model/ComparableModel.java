@@ -3,7 +3,7 @@ package data.model;
 /**
  * Created by Alex on 09/06/2017.
  */
-interface ComparableModel<ModelType> {
+public interface ComparableModel<ModelType> {
 
     boolean isHigherThan(ModelType comparable);
 
