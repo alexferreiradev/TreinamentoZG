@@ -22,7 +22,7 @@ public class Card implements ComparableModel<Card>, Comparable<Card> {
     }
 
     public boolean isHigherThan(Card card){
-        return this.getValueType().isHigherThan(card.getValueType()) ? true : false;
+        return this.getValueType().isHigherThan(card.getValueType());
     }
 
     @Override
