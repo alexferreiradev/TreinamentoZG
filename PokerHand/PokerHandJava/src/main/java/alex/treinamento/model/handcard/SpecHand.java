@@ -1,7 +1,6 @@
 package alex.treinamento.model.handcard;
 
 import alex.treinamento.model.Card;
-import alex.treinamento.model.handcard.util.HandUtil;
 
 import java.util.*;
 
@@ -20,9 +19,8 @@ public class SpecHand implements HandSpecification{
     public SpecHand(List<Card> cards) {
         this.cards = new ArrayList<>(cards);
         Collections.sort(this.cards);
-        isSameSuit = HandUtil.isSameSuit(this.cards);
         sequence = new Sequence(this.cards);
-        group = new Group(this.cards);
+        isSameSuit = sequence.isAllSameSuit();
         pairs = new ArrayList<>();
         processKicker();
     }
@@ -75,20 +73,66 @@ public class SpecHand implements HandSpecification{
      *
      */
     private void processKicker() {
-        Queue<Card> withoutGroup = group.retrieveGroup();
+        Queue<Card> withoutGroup = extractGroup();
+        List<Card> kickers = extractPairs(withoutGroup);
+        kicker = new Kicker(kickers);
+    }
+
+    /**
+     * Extrai pares de lista de cartas que não formaram grupos.
+     *
+     * @param withoutGroup - lista de cartas que nao forma grupo
+     * @return lista de cartas kickers
+     */
+    private List<Card> extractPairs(Queue<Card> withoutGroup) {
         List<Card> kickers = new ArrayList<>();
         pairs = new ArrayList<>();
-        while(!withoutGroup.isEmpty() && withoutGroup.size() > 1){
+        while(!withoutGroup.isEmpty() && withoutGroup.size() >= Pair.MIN_SIZE){
             Card poll = withoutGroup.poll();
             if (poll.isSameThan(withoutGroup.peek())){
                 pairs.add(new Pair(withoutGroup.poll()));
-            } else {
-                kickers.add(poll);
             }
         }
-        kickers.addAll(withoutGroup);
 
-        kicker = new Kicker(kickers);
+        kickers.addAll(withoutGroup);
+        return kickers;
+    }
+
+    /**
+     * Remove as cartas que nao formam grupo.
+     *
+     * @return - cartas que não formam grupo ordenadas de maior para menor.
+     */
+    private Queue<Card> extractGroup(){
+        Queue<Card> withoutGroup = new ArrayDeque<>();
+        Stack<Card> groupStack = new Stack<>();
+
+        Stack<Card> auxStack = new Stack<>();
+        auxStack.addAll(cards);
+        while (!auxStack.isEmpty()){
+            if (groupStack.isEmpty()){
+                groupStack.add(auxStack.pop());
+                continue;
+            }
+
+            Card pop = auxStack.pop();
+            if (pop.getValueType().isSameThan(groupStack.peek().getValueType()) == false){
+                if (groupStack.size() > Group.MIN_GROUP_SIZE){
+                    withoutGroup.add(pop);
+                } else {
+                    withoutGroup.addAll(groupStack);
+                    groupStack.clear();
+                }
+            }
+            groupStack.add(pop);
+        }
+
+        group = new Group(groupStack);
+        if (groupStack.size() < Group.MIN_GROUP_SIZE){
+            withoutGroup.addAll(groupStack);
+        }
+
+        return withoutGroup;
     }
 
     public List<Card> getCards() {
