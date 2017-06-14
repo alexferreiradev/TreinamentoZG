@@ -91,6 +91,8 @@ public class SpecHand implements HandSpecification{
             Card poll = withoutGroup.poll();
             if (poll.isSameThan(withoutGroup.peek())){
                 pairs.add(new Pair(withoutGroup.poll()));
+            } else {
+                kickers.add(poll);
             }
         }
 
@@ -117,8 +119,9 @@ public class SpecHand implements HandSpecification{
 
             Card pop = auxStack.pop();
             if (pop.getValueType().isSameThan(groupStack.peek().getValueType()) == false){
-                if (groupStack.size() > Group.MIN_GROUP_SIZE){
+                if (groupStack.size() >= Group.MIN_GROUP_SIZE){
                     withoutGroup.add(pop);
+                    continue;
                 } else {
                     withoutGroup.addAll(groupStack);
                     groupStack.clear();
