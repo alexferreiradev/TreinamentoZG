@@ -4,7 +4,7 @@ O repositório contém todos projetos realizados durante o treinamento da ZG vol
 
 # Projetos
 
-- Checkout
-- Poker Hand
-- Manage workers hours
+- [Checkout](/Checkout)
+- [Poker Hand](/PokerHand)
+- [Manage workers hours](/ManageWorkersHours)
 - 
