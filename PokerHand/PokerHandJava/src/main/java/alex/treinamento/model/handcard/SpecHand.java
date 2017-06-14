@@ -106,7 +106,7 @@ public class SpecHand implements HandSpecification{
      * @return - cartas que não formam grupo ordenadas de maior para menor.
      */
     private Queue<Card> extractGroup(){
-        Queue<Card> withoutGroup = new ArrayDeque<>();
+        Queue<Card> withoutGroupQueue = new ArrayDeque<>();
         Stack<Card> groupStack = new Stack<>();
 
         Stack<Card> auxStack = new Stack<>();
@@ -117,25 +117,27 @@ public class SpecHand implements HandSpecification{
                 continue;
             }
 
-            Card pop = auxStack.pop();
-            if (pop.getValueType().isSameThan(groupStack.peek().getValueType()) == false){
+            Card currentCard = auxStack.pop();
+            Card groupTopCard = groupStack.peek();
+            if (currentCard.getValueType().isSameThan(groupTopCard.getValueType()) == false){
                 if (groupStack.size() >= Group.MIN_GROUP_SIZE){
-                    withoutGroup.add(pop);
+                    withoutGroupQueue.add(currentCard);
                     continue;
                 } else {
-                    withoutGroup.addAll(groupStack);
+                    withoutGroupQueue.addAll(groupStack);
                     groupStack.clear();
                 }
             }
-            groupStack.add(pop);
+
+            groupStack.add(currentCard);
         }
 
         group = new Group(groupStack);
-        if (groupStack.size() < Group.MIN_GROUP_SIZE){
-            withoutGroup.addAll(groupStack);
+        if (!group.isValid()){
+            withoutGroupQueue.addAll(groupStack);
         }
 
-        return withoutGroup;
+        return withoutGroupQueue;
     }
 
     public List<Card> getCards() {
