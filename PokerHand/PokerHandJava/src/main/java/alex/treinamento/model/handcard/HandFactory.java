@@ -36,18 +36,20 @@ public class HandFactory {
         Group group = specification.getGroup();
         if (group.getLength() == FourKindHand.GROUP_LENGTH){
             return HandType.FOUR_KIND.getHandCard(specification);
-        } else if (group.isValid()){
+        }
+
+        if (group.isValid()){
             if (specification.hasPairs()){
                 return HandType.FULL_HOUSE.getHandCard(specification);
             }
-            return HandType.THREE_KIND.getHandCard(specification);
         }
-        return null;
+
+        return HandType.THREE_KIND.getHandCard(specification);
     }
 
     private HandCard createPairHand(HandSpecification specification) {
         List<Pair> pairs = specification.getPairs();
-        if (pairs.size() == TwoPairHand.PAIR_LENGTH){
+        if (pairs.size() == TwoPairHand.PAIR_SIZE){
             return HandType.TWO_PAIR.getHandCard(specification);
         }
 
