@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class TwoPairHand extends BaseNoHigherHand {
 
-    public static final int PAIR_LENGTH = 2;
+    public static final int PAIR_SIZE = 2;
 
     public TwoPairHand(HandSpecification specification) {
         super(specification);
