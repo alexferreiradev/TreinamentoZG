@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Group implements ComparableModel<Group>, ValidSpecification {
 
-    public static final int MIN_GROUP_SIZE = 2;
+    public static final int MIN_GROUP_SIZE = 3;
 
     private CardValue value;
     private int length;
@@ -96,6 +96,6 @@ public class Group implements ComparableModel<Group>, ValidSpecification {
 
     @Override
     public boolean isValid() {
-        return length > MIN_GROUP_SIZE;
+        return length >= MIN_GROUP_SIZE;
     }
 }
