@@ -8,6 +8,8 @@ import alex.treinamento.model.ComparableModel;
  */
 public class Pair implements ComparableModel<Pair>{
 
+    public static final int MIN_SIZE = 2;
+
     private Card card;
 
     public Pair(Card card) {
