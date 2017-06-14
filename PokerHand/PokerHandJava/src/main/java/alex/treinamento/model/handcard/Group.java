@@ -23,51 +23,13 @@ public class Group implements ComparableModel<Group>, ValidSpecification {
         }
 
         this.cards = new ArrayList<>(cards);
-        this.value = null;
-        this.length = 0;
+        this.length = cards.size();
+        if (isValid()){
+            value = cards.get(0).getValueType();
+        }
     }
 
-    /**
-     * Remove as cartas que nao formam grupo.
-     *
-     * @return - cartas que não formam grupo ordenadas de maior para menor.
-     */
-    public Queue<Card> retrieveGroup(){
-        Queue<Card> withoutGroup = new ArrayDeque<>();
-        Stack<Card> withoutGroupStack = new Stack<>();
-        Stack<Card> groupStack = new Stack<>();
-        Stack<Card> auxStack = new Stack<>();
-        auxStack.addAll(cards);
-        while (!auxStack.isEmpty()){
-            if (groupStack.isEmpty()){
-                groupStack.add(auxStack.pop());
-                continue;
-            }
 
-            Card pop = auxStack.pop();
-            if (pop.getValueType() == groupStack.peek().getValueType()){
-                groupStack.add(pop);
-            } else if (groupStack.size() > MIN_GROUP_SIZE){
-                withoutGroupStack.add(pop);
-            } else {
-                withoutGroupStack.addAll(groupStack);
-                groupStack.clear();
-                groupStack.add(pop);
-            }
-        }
-
-        cards.clear();
-        if (groupStack.size() > MIN_GROUP_SIZE){
-            cards.addAll(groupStack);
-            value = groupStack.peek().getValueType();
-        } else{
-            withoutGroupStack.addAll(groupStack);
-        }
-        length = cards.size();
-
-        withoutGroup.addAll(withoutGroupStack);
-        return withoutGroup;
-    }
 
     public CardValue getValue() {
         return value;
@@ -134,6 +96,6 @@ public class Group implements ComparableModel<Group>, ValidSpecification {
 
     @Override
     public boolean isValid() {
-        return length > MIN_GROUP_SIZE ? true : false;
+        return length > MIN_GROUP_SIZE;
     }
 }
