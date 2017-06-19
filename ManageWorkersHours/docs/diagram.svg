@@ -1,0 +1,2535 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- created with bpmn-js / http://bpmn.io -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="784"
+   height="810"
+   viewBox="236 91 784 810"
+   version="1.1"
+   id="svg3906"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="diagram.svg"
+   inkscape:export-filename="/media/WORK/TreinamentoZG/ManageWorkersHours/docs/diagram.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <metadata
+     id="metadata4787">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     id="namedview4785"
+     showgrid="false"
+     inkscape:zoom="1.1222222"
+     inkscape:cx="392"
+     inkscape:cy="405"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3906" />
+  <defs
+     id="defs3908">
+    <marker
+       id="sequenceflow-end-white-black"
+       viewBox="0 0 20 20"
+       refX="11"
+       refY="10"
+       markerWidth="10"
+       markerHeight="10"
+       orient="auto">
+      <path
+         d="M 1 5 L 11 10 L 1 15 Z"
+         style="fill: black; stroke-width: 1px; stroke-linecap: round; stroke-dasharray: 10000, 1; stroke: black;"
+         id="path3911" />
+    </marker>
+  </defs>
+  <g
+     class="djs-group"
+     id="g3913">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_1"
+       transform="translate(266 119)"
+       style="display: block;"
+       id="g3915">
+      <g
+         class="djs-visual"
+         id="g3917">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="circle3919"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3921" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect3923" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g3925">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_1_label"
+       transform="translate(242 155)"
+       style="display: block;"
+       id="g3927">
+      <g
+         class="djs-visual"
+         id="g3929">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text3931">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan3933">funcionário entra</tspan>
+          <tspan
+             x="11.921875"
+             y="24"
+             id="tspan3935">na empresa </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="85"
+         height="24"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3937" />
+      <rect
+         x="-6"
+         y="-6"
+         width="97"
+         height="36"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect3939" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g3941">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0ppg0db"
+       transform="translate(415 97)"
+       style="display: block;"
+       id="g3943">
+      <g
+         class="djs-visual"
+         id="g3945">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect3947" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text3949">
+          <tspan
+             x="19.484375"
+             y="36.5"
+             id="tspan3951">Entrada de </tspan>
+          <tspan
+             x="19.484375"
+             y="50.5"
+             id="tspan3953">funcionario </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3955" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect3957" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g3959">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_16lof36"
+       transform="translate(641 112)"
+       style="display: block;"
+       id="g3961">
+      <g
+         class="djs-visual"
+         id="g3963">
+        <polygon
+           points="25,0 50,25 25,50 0,25"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="polygon3965" />
+        <path
+           d="m 16,15 7.42857142857143,9.714285714285715 -7.42857142857143,9.714285714285715 3.428571428571429,0 5.714285714285715,-7.464228571428572 5.714285714285715,7.464228571428572 3.428571428571429,0 -7.42857142857143,-9.714285714285715 7.42857142857143,-9.714285714285715 -3.428571428571429,0 -5.714285714285715,7.464228571428572 -5.714285714285715,-7.464228571428572 -3.428571428571429,0 z"
+           style="fill: black; stroke-width: 1px; stroke: black;"
+           id="path3967" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3969" />
+      <rect
+         x="-6"
+         y="-6"
+         width="62"
+         height="62"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect3971" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g3973">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_16lof36_label"
+       transform="translate(630 166)"
+       style="display: block;"
+       id="g3975">
+      <g
+         class="djs-visual"
+         id="g3977">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text3979">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan3981">bate o ponto ?</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="73"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3983" />
+      <rect
+         x="-6"
+         y="-6"
+         width="85"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect3985" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g3987">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_1dc8hvu"
+       transform="translate(786 97)"
+       style="display: block;"
+       id="g3989">
+      <g
+         class="djs-visual"
+         id="g3991">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect3993" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text3995">
+          <tspan
+             x="14.8125"
+             y="43.5"
+             id="tspan3997">Bate o ponto</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect3999" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4001" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4003">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0zhu90x"
+       transform="translate(616 253)"
+       style="display: block;"
+       id="g4005">
+      <g
+         class="djs-visual"
+         id="g4007">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4009" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4011">
+          <tspan
+             x="10.1484375"
+             y="29.5"
+             id="tspan4013">Requisita para </tspan>
+          <tspan
+             x="10.140625"
+             y="43.5"
+             id="tspan4015">bater ponto ao </tspan>
+          <tspan
+             x="35.671875"
+             y="57.5"
+             id="tspan4017">ADM </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4019" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4021" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4023">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_0ipdcb6"
+       transform="translate(641 384)"
+       style="display: block;"
+       id="g4025">
+      <g
+         class="djs-visual"
+         id="g4027">
+        <polygon
+           points="25,0 50,25 25,50 0,25"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="polygon4029" />
+        <path
+           d="m 16,15 7.42857142857143,9.714285714285715 -7.42857142857143,9.714285714285715 3.428571428571429,0 5.714285714285715,-7.464228571428572 5.714285714285715,7.464228571428572 3.428571428571429,0 -7.42857142857143,-9.714285714285715 7.42857142857143,-9.714285714285715 -3.428571428571429,0 -5.714285714285715,7.464228571428572 -5.714285714285715,-7.464228571428572 -3.428571428571429,0 z"
+           style="fill: black; stroke-width: 1px; stroke: black;"
+           id="path4031" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4033" />
+      <rect
+         x="-6"
+         y="-6"
+         width="62"
+         height="62"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4035" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4037">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0szw22x"
+       transform="translate(786 369)"
+       style="display: block;"
+       id="g4039">
+      <g
+         class="djs-visual"
+         id="g4041">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4043" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4045">
+          <tspan
+             x="15.4921875"
+             y="29.5"
+             id="tspan4047">ADM aprova </tspan>
+          <tspan
+             x="33.828125"
+             y="43.5"
+             id="tspan4049">ponto </tspan>
+          <tspan
+             x="19.484375"
+             y="57.5"
+             id="tspan4051">requisitado </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4053" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4055" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4057">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0j0a3ws"
+       transform="translate(616 494)"
+       style="display: block;"
+       id="g4059">
+      <g
+         class="djs-visual"
+         id="g4061">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4063" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4065">
+          <tspan
+             x="13.15625"
+             y="29.5"
+             id="tspan4067">ADM cancela </tspan>
+          <tspan
+             x="25.484375"
+             y="43.5"
+             id="tspan4069">ponto do </tspan>
+          <tspan
+             x="19.484375"
+             y="57.5"
+             id="tspan4071">funcionario </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4073" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4075" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4077">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_1mh8ov1"
+       transform="translate(978 119)"
+       style="display: block;"
+       id="g4079">
+      <g
+         class="djs-visual"
+         id="g4081">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 4px; fill: white;"
+           id="circle4083"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4085" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4087" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4089">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_1mh8ov1_label"
+       transform="translate(951 159)"
+       style="display: none;"
+       id="g4091">
+      <g
+         class="djs-visual"
+         id="g4093">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4095">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4097" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4099" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4101" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4103">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0xykpz7"
+       transform="translate(978 391)"
+       style="display: block;"
+       id="g4105">
+      <g
+         class="djs-visual"
+         id="g4107">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 4px; fill: white;"
+           id="circle4109"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4111" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4113" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4115">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0xykpz7_label"
+       transform="translate(951 431)"
+       style="display: none;"
+       id="g4117">
+      <g
+         class="djs-visual"
+         id="g4119">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4121">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4123" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4125" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4127" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4129">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0wk285l"
+       transform="translate(978 516)"
+       style="display: block;"
+       id="g4131">
+      <g
+         class="djs-visual"
+         id="g4133">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 4px; fill: white;"
+           id="circle4135"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4137" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4139" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4141">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0wk285l_label"
+       transform="translate(951 556)"
+       style="display: none;"
+       id="g4143">
+      <g
+         class="djs-visual"
+         id="g4145">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4147">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4149" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4151" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4153" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4155">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_0hcsplq"
+       transform="translate(266 680)"
+       style="display: block;"
+       id="g4157">
+      <g
+         class="djs-visual"
+         id="g4159">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="circle4161"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4163" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4165" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4167">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_0hcsplq_label"
+       transform="translate(248 720)"
+       style="display: block;"
+       id="g4169">
+      <g
+         class="djs-visual"
+         id="g4171">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4173">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4175">ADM gerencia </tspan>
+          <tspan
+             x="18.5234375"
+             y="24"
+             id="tspan4177">pontos </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="73"
+         height="24"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4179" />
+      <rect
+         x="-6"
+         y="-6"
+         width="85"
+         height="36"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4181" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4183">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_1n1pt70"
+       transform="translate(440 673)"
+       style="display: block;"
+       id="g4185">
+      <g
+         class="djs-visual"
+         id="g4187">
+        <polygon
+           points="25,0 50,25 25,50 0,25"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="polygon4189" />
+        <path
+           d="m 16,15 7.42857142857143,9.714285714285715 -7.42857142857143,9.714285714285715 3.428571428571429,0 5.714285714285715,-7.464228571428572 5.714285714285715,7.464228571428572 3.428571428571429,0 -7.42857142857143,-9.714285714285715 7.42857142857143,-9.714285714285715 -3.428571428571429,0 -5.714285714285715,7.464228571428572 -5.714285714285715,-7.464228571428572 -3.428571428571429,0 z"
+           style="fill: black; stroke-width: 1px; stroke: black;"
+           id="path4191" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="50"
+         height="50"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4193" />
+      <rect
+         x="-6"
+         y="-6"
+         width="62"
+         height="62"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4195" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4197">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_1n1pt70_label"
+       transform="translate(430 727)"
+       style="display: block;"
+       id="g4199">
+      <g
+         class="djs-visual"
+         id="g4201">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4203">
+          <tspan
+             x="6.7265625"
+             y="12"
+             id="tspan4205">tem pontos </tspan>
+          <tspan
+             x="0"
+             y="24"
+             id="tspan4207">requisitados ? </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="71"
+         height="24"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4209" />
+      <rect
+         x="-6"
+         y="-6"
+         width="83"
+         height="36"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4211" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4213">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0aneig1"
+       transform="translate(616 658)"
+       style="display: block;"
+       id="g4215">
+      <g
+         class="djs-visual"
+         id="g4217">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4219" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4221">
+          <tspan
+             x="22.65625"
+             y="36.5"
+             id="tspan4223">aprova ou </tspan>
+          <tspan
+             x="12.9765625"
+             y="50.5"
+             id="tspan4225">rejeita pontos </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4227" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4229" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4231">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0bvkhs7"
+       transform="translate(818 680)"
+       style="display: block;"
+       id="g4233">
+      <g
+         class="djs-visual"
+         id="g4235">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 4px; fill: white;"
+           id="circle4237"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4239" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4241" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4243">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0bvkhs7_label"
+       transform="translate(791 720)"
+       style="display: none;"
+       id="g4245">
+      <g
+         class="djs-visual"
+         id="g4247">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4249">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4251" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4253" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4255" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4257">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_0u4du29"
+       transform="translate(266 837)"
+       style="display: block;"
+       id="g4259">
+      <g
+         class="djs-visual"
+         id="g4261">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="circle4263"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4265" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4267" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4269">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0fmjuln"
+       transform="translate(415 815)"
+       style="display: block;"
+       id="g4271">
+      <g
+         class="djs-visual"
+         id="g4273">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4275" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4277">
+          <tspan
+             x="17.4921875"
+             y="36.5"
+             id="tspan4279">Fucnionario </tspan>
+          <tspan
+             x="15.984375"
+             y="50.5"
+             id="tspan4281">passa digital </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4283" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4285" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4287">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="Task_0yxsdye"
+       transform="translate(616 815)"
+       style="display: block;"
+       id="g4289">
+      <g
+         class="djs-visual"
+         id="g4291">
+        <rect
+           x="0"
+           y="0"
+           width="100"
+           height="80"
+           rx="10"
+           ry="10"
+           style="stroke: black; stroke-width: 2px; fill: white;"
+           id="rect4293" />
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 12px; fill: black;"
+           id="text4295">
+          <tspan
+             x="15.4921875"
+             y="29.5"
+             id="tspan4297">Maq registra </tspan>
+          <tspan
+             x="25.484375"
+             y="43.5"
+             id="tspan4299">ponto do </tspan>
+          <tspan
+             x="19.484375"
+             y="57.5"
+             id="tspan4301">funcionario </tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="100"
+         height="80"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4303" />
+      <rect
+         x="-6"
+         y="-6"
+         width="112"
+         height="92"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4305" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4307">
+    <g
+       class="djs-element djs-shape selected"
+       data-element-id="EndEvent_0a04l7j"
+       transform="translate(818 837.4032869785083)"
+       style="display: block;"
+       id="g4309">
+      <g
+         class="djs-visual"
+         id="g4311">
+        <circle
+           cx="18"
+           cy="18"
+           r="18"
+           style="stroke: black; stroke-width: 4px; fill: white;"
+           id="circle4313"
+           d="M 36,18 C 36,27.941125 27.941125,36 18,36 8.0588745,36 0,27.941125 0,18 0,8.0588745 8.0588745,0 18,0 27.941125,0 36,8.0588745 36,18 z" />
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="36"
+         height="36"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4315" />
+      <rect
+         x="-6"
+         y="-6"
+         width="48"
+         height="48"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4317" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4319">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_1o2awxm"
+       style="display: block;"
+       id="g4321">
+      <g
+         class="djs-visual"
+         id="g4323">
+        <path
+           d="m  302,137L415,137 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4325" />
+      </g>
+      <polyline
+         points="302,137 415,137 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4327" />
+      <rect
+         x="296"
+         y="131"
+         width="125"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4329" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4331">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_1o2awxm_label"
+       transform="translate(314 116)"
+       style="display: none;"
+       id="g4333">
+      <g
+         class="djs-visual"
+         id="g4335">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4337">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4339" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4341" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4343" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4345">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0q7cjpk"
+       style="display: block;"
+       id="g4347">
+      <g
+         class="djs-visual"
+         id="g4349">
+        <path
+           d="m  515,137L641,137 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4351" />
+      </g>
+      <polyline
+         points="515,137 641,137 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4353" />
+      <rect
+         x="509"
+         y="131"
+         width="138"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4355" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4357">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0q7cjpk_label"
+       transform="translate(533 116)"
+       style="display: none;"
+       id="g4359">
+      <g
+         class="djs-visual"
+         id="g4361">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4363">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4365" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4367" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4369" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4371">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_06imuaz"
+       style="display: block;"
+       id="g4373">
+      <g
+         class="djs-visual"
+         id="g4375">
+        <path
+           d="m  691,137L786,137 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4377" />
+      </g>
+      <polyline
+         points="691,137 786,137 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4379" />
+      <rect
+         x="685"
+         y="131"
+         width="107"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4381" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4383">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_06imuaz_label"
+       transform="translate(729 116)"
+       style="display: block;"
+       id="g4385">
+      <g
+         class="djs-visual"
+         id="g4387">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4389">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4391">sim</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="19"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4393" />
+      <rect
+         x="-6"
+         y="-6"
+         width="31"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4395" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4397">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0y2ivyu"
+       style="display: block;"
+       id="g4399">
+      <g
+         class="djs-visual"
+         id="g4401">
+        <path
+           d="m  666,162L666,253 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4403" />
+      </g>
+      <polyline
+         points="666,162 666,253 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4405" />
+      <rect
+         x="660"
+         y="156"
+         width="12"
+         height="103"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4407" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4409">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0y2ivyu_label"
+       transform="translate(671 202)"
+       style="display: block;"
+       id="g4411">
+      <g
+         class="djs-visual"
+         id="g4413">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4415">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4417">não</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="21"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4419" />
+      <rect
+         x="-6"
+         y="-6"
+         width="33"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4421" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4423">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_1vd5m8r"
+       style="display: block;"
+       id="g4425">
+      <g
+         class="djs-visual"
+         id="g4427">
+        <path
+           d="m  666,333L666,384 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4429" />
+      </g>
+      <polyline
+         points="666,333 666,384 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4431" />
+      <rect
+         x="660"
+         y="327"
+         width="12"
+         height="63"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4433" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4435">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_1vd5m8r_label"
+       transform="translate(636 353)"
+       style="display: none;"
+       id="g4437">
+      <g
+         class="djs-visual"
+         id="g4439">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4441">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4443" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4445" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4447" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4449">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0nlrnhk"
+       style="display: block;"
+       id="g4451">
+      <g
+         class="djs-visual"
+         id="g4453">
+        <path
+           d="m  691,409L786,409 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4455" />
+      </g>
+      <polyline
+         points="691,409 786,409 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4457" />
+      <rect
+         x="685"
+         y="403"
+         width="107"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4459" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4461">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0nlrnhk_label"
+       transform="translate(730 388)"
+       style="display: block;"
+       id="g4463">
+      <g
+         class="djs-visual"
+         id="g4465">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4467">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4469">sim</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="19"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4471" />
+      <rect
+         x="-6"
+         y="-6"
+         width="31"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4473" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4475">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0b64owc"
+       style="display: block;"
+       id="g4477">
+      <g
+         class="djs-visual"
+         id="g4479">
+        <path
+           d="m  666,434L666,494 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4481" />
+      </g>
+      <polyline
+         points="666,434 666,494 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4483" />
+      <rect
+         x="660"
+         y="428"
+         width="12"
+         height="72"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4485" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4487">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0b64owc_label"
+       transform="translate(671 458)"
+       style="display: block;"
+       id="g4489">
+      <g
+         class="djs-visual"
+         id="g4491">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4493">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4495">nao</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="21"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4497" />
+      <rect
+         x="-6"
+         y="-6"
+         width="33"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4499" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4501">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0bk2k67"
+       style="display: block;"
+       id="g4503">
+      <g
+         class="djs-visual"
+         id="g4505">
+        <path
+           d="m  886,137L978,137 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4507" />
+      </g>
+      <polyline
+         points="886,137 978,137 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4509" />
+      <rect
+         x="880"
+         y="131"
+         width="104"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4511" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4513">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0bk2k67_label"
+       transform="translate(887 116)"
+       style="display: none;"
+       id="g4515">
+      <g
+         class="djs-visual"
+         id="g4517">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4519">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4521" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4523" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4525" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4527">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0c53lk6"
+       style="display: block;"
+       id="g4529">
+      <g
+         class="djs-visual"
+         id="g4531">
+        <path
+           d="m  886,409L978,409 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4533" />
+      </g>
+      <polyline
+         points="886,409 978,409 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4535" />
+      <rect
+         x="880"
+         y="403"
+         width="104"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4537" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4539">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0c53lk6_label"
+       transform="translate(887 388)"
+       style="display: none;"
+       id="g4541">
+      <g
+         class="djs-visual"
+         id="g4543">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4545">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4547" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4549" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4551" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4553">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_03hoyql"
+       style="display: block;"
+       id="g4555">
+      <g
+         class="djs-visual"
+         id="g4557">
+        <path
+           d="m  716,534L978,534 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4559" />
+      </g>
+      <polyline
+         points="716,534 978,534 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4561" />
+      <rect
+         x="710"
+         y="528"
+         width="274"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4563" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4565">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_03hoyql_label"
+       transform="translate(802 513)"
+       style="display: none;"
+       id="g4567">
+      <g
+         class="djs-visual"
+         id="g4569">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4571">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4573" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4575" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4577" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4579">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0j5qrfy"
+       style="display: block;"
+       id="g4581">
+      <g
+         class="djs-visual"
+         id="g4583">
+        <path
+           d="m  302,698L440,698 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4585" />
+      </g>
+      <polyline
+         points="302,698 440,698 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4587" />
+      <rect
+         x="296"
+         y="692"
+         width="150"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4589" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4591">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0j5qrfy_label"
+       transform="translate(326 677)"
+       style="display: none;"
+       id="g4593">
+      <g
+         class="djs-visual"
+         id="g4595">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4597">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4599" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4601" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4603" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4605">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_0vuxdfd"
+       style="display: block;"
+       id="g4607">
+      <g
+         class="djs-visual"
+         id="g4609">
+        <path
+           d="m  490,698L616,698 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4611" />
+      </g>
+      <polyline
+         points="490,698 616,698 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4613" />
+      <rect
+         x="484"
+         y="692"
+         width="138"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4615" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4617">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_0vuxdfd_label"
+       transform="translate(508 677)"
+       style="display: none;"
+       id="g4619">
+      <g
+         class="djs-visual"
+         id="g4621">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4623">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4625" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4627" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4629" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4631">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_1gotob2"
+       style="display: block;"
+       id="g4633">
+      <g
+         class="djs-visual"
+         id="g4635">
+        <path
+           d="m  716,698L818,698 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4637" />
+      </g>
+      <polyline
+         points="716,698 818,698 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4639" />
+      <rect
+         x="710"
+         y="692"
+         width="114"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4641" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4643">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_1gotob2_label"
+       transform="translate(722 677)"
+       style="display: none;"
+       id="g4645">
+      <g
+         class="djs-visual"
+         id="g4647">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4649">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4651" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="90"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4653" />
+      <rect
+         x="-6"
+         y="-6"
+         width="102"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4655" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4657">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="StartEvent_0u4du29_label"
+       transform="translate(258 877)"
+       style="display: block;"
+       id="g4659">
+      <g
+         class="djs-visual"
+         id="g4661">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4663">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4665">Maq inicia</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="53"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4667" />
+      <rect
+         x="-6"
+         y="-6"
+         width="65"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4669" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4671">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="ExclusiveGateway_0ipdcb6_label"
+       transform="translate(560 403)"
+       style="display: block;"
+       id="g4673">
+      <g
+         class="djs-visual"
+         id="g4675">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4677">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4679">ADM Aprova ?</tspan>
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="74"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4681" />
+      <rect
+         x="-6"
+         y="-6"
+         width="86"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4683" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4685">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_09i2v3n"
+       style="display: block;"
+       id="g4687">
+      <g
+         class="djs-visual"
+         id="g4689">
+        <path
+           d="m  302,855L415,855 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4691" />
+      </g>
+      <polyline
+         points="302,855 415,855 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4693" />
+      <rect
+         x="296"
+         y="849"
+         width="125"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4695" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4697">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_09i2v3n_label"
+       transform="translate(358.5 834)"
+       style="display: none;"
+       id="g4699">
+      <g
+         class="djs-visual"
+         id="g4701">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4703">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4705" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="0"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4707" />
+      <rect
+         x="-6"
+         y="-6"
+         width="12"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4709" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4711">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_077aa13"
+       style="display: block;"
+       id="g4713">
+      <g
+         class="djs-visual"
+         id="g4715">
+        <path
+           d="m  515,855L616,855 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4717" />
+      </g>
+      <polyline
+         points="515,855 616,855 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4719" />
+      <rect
+         x="509"
+         y="849"
+         width="113"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4721" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4723">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_077aa13_label"
+       transform="translate(565.5 834)"
+       style="display: none;"
+       id="g4725">
+      <g
+         class="djs-visual"
+         id="g4727">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4729">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4731" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="0"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4733" />
+      <rect
+         x="-6"
+         y="-6"
+         width="12"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4735" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4737">
+    <g
+       class="djs-element djs-connection"
+       data-element-id="SequenceFlow_114lj9u"
+       style="display: block;"
+       id="g4739">
+      <g
+         class="djs-visual"
+         id="g4741">
+        <path
+           d="m  716,855L767,855 L767,855 L818,855 "
+           style="fill: none; stroke-width: 2px; stroke: black; stroke-linejoin: round; marker-end: url('#sequenceflow-end-white-black');"
+           id="path4743" />
+      </g>
+      <polyline
+         points="716,855 767,855 767,855 818,855 "
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="polyline4745" />
+      <rect
+         x="710"
+         y="849"
+         width="114"
+         height="12"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4747" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4749">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="SequenceFlow_114lj9u_label"
+       transform="translate(782 849)"
+       style="display: none;"
+       id="g4751">
+      <g
+         class="djs-visual"
+         id="g4753">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4755">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4757" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="0"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4759" />
+      <rect
+         x="-6"
+         y="-6"
+         width="12"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4761" />
+    </g>
+  </g>
+  <g
+     class="djs-group"
+     id="g4763">
+    <g
+       class="djs-element djs-shape"
+       data-element-id="EndEvent_0a04l7j_label"
+       transform="translate(836 877.4032869785083)"
+       style="display: none;"
+       id="g4765">
+      <g
+         class="djs-visual"
+         id="g4767">
+        <text
+           class="djs-label"
+           style="font-family: Arial, sans-serif; font-size: 11px;"
+           id="text4769">
+          <tspan
+             x="0"
+             y="12"
+             id="tspan4771" />
+        </text>
+      </g>
+      <rect
+         x="0"
+         y="0"
+         width="0"
+         height="12"
+         class="djs-hit"
+         style="fill: none; stroke-opacity: 0; stroke: white; stroke-width: 15px;"
+         id="rect4773" />
+      <rect
+         x="-6"
+         y="-6"
+         width="12"
+         height="24"
+         class="djs-outline"
+         style="fill: none;"
+         id="rect4775" />
+    </g>
+  </g>
+  <g
+     class="djs-drag-group"
+     transform="translate(0 -18)"
+     style="pointer-events: none;"
+     id="g4777" />
+  <g
+     class="djs-drag-group"
+     transform="translate(-63 -35)"
+     style="pointer-events: none;"
+     id="g4779" />
+  <g
+     class="djs-drag-group"
+     transform="translate(-6 0)"
+     style="pointer-events: none;"
+     id="g4781" />
+  <g
+     class="djs-drag-group"
+     transform="translate(0 10)"
+     style="pointer-events: none;"
+     id="g4783" />
+</svg>
