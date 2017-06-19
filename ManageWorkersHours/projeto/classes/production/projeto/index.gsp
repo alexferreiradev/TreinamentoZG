@@ -72,6 +72,8 @@
                     </g:each>
                 </ul>
             </div>
+
+            <a href="user/login.gsp" >Login</a>
         </section>
     </div>
 
