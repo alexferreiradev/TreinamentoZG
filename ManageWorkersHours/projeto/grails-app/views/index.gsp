@@ -73,7 +73,7 @@
                 </ul>
             </div>
 
-            <a href="user/login.gsp" >Login</a>
+            <g:link controller="user" action="login" >Login</g:link>
         </section>
     </div>
 
