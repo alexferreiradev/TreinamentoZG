@@ -4,16 +4,15 @@ import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
 class User {
-    String name;
-    String lastName;
-    String cpf;
-    String email;
-    String password;
-    String address;
-    String job;
-    Date createDate;
-    Date updateDate;
-    int permission;
+    String name
+    String lastName
+    String cpf
+    String userEmail
+    String password
+    String address
+    String job
+    int permission
+    float salary
 
     static constraints = {
     }
