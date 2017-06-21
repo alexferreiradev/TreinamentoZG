@@ -52,7 +52,7 @@ a:hover, a:active {
 h1, h2, h3 {
     font-weight: normal;
     font-size: 1.25em;
-    margin: 0.8em 0 0.3em 0;
+    margin: 24px 0 24px 0px;
 }
 
 ul {
@@ -71,12 +71,19 @@ img {
 }
 
 .content {
+    margin: 16px;
+    padding: 5px;
 }
 
 .content h1 {
     border-bottom: 1px solid #CCCCCC;
-    margin: 0.8em 1em 0.3em;
-    padding: 0 0.25em;
+    margin: 24px 24px 24px;
+    padding: 0 8px;
+}
+
+.content h2 {
+    margin: 16px 8px 16px 48px;
+    padding: 8px 8px;
 }
 
 .scaffold-list h1 {

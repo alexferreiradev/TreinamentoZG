@@ -18,7 +18,7 @@ class ProdutoController {
     }
 
     def create() {
-        respond new Produto(params).getClass().simpleName
+        respond new Produto(params)
     }
 
     @Transactional
