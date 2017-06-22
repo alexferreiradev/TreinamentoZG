@@ -7,4 +7,4 @@ O repositório contém todos projetos realizados durante o treinamento da ZG vol
 - [Checkout](/Checkout)
 - [Poker Hand](/PokerHand)
 - [Manage workers hours](/ManageWorkersHours)
-- 
+- [Treinamento-grails](/treinamento-grails)
