@@ -1,13 +1,17 @@
 package projeto
 
+import grails.gorm.DetachedCriteria
 import grails.transaction.Transactional
+import org.h2.util.DateTimeUtils
+import user.Employer
 import user.User
 
 @Transactional
 class EmployerService {
 
-    def getCurrentBalance(Configuration configuration, User user) {
+    int getCurrentBalance(Configuration configuration, Employer employer) {
         // todo calcular horas por dia e somar até dia atual
+
     }
 
     def addLateRegister(User user, HourRegister register) {
@@ -25,7 +29,14 @@ class EmployerService {
         // TODO calcular horas por dia
     }
 
-    List<HourRegister> getAllHourRegistersByInterval(Configuration configuration, User user, int offset) {
+    List<HourRegister> getAllHourRegistersByInterval(Configuration configuration, Employer employer, int offset) {
+        int month = Calendar.getInstance(Locale.getDefault()).get(Calendar.MONTH)
+
+        DetachedCriteria<HourRegister> query = HourRegister.where {
+            employer == employer
+            DateTimeUtils.getDatePart(dateTime, Calendar.MONTH) == month
+        }
+        query.findAll()
         return HourRegister.findAllByEmployer(user, offset: offset, max: 10)
     }
 
