@@ -27,10 +27,10 @@ class EmployerController {
     def addRegister(Employer employer){
         Date currentDate = new Date()
         HourRegister register = new HourRegister(employer, currentDate)
-        register.save()
+        register.save flush:true
 
-        flash.message = message(code: 'default.created.message', default: 'Ponto batido as ', args: [currentDate])
-        render view: "show", model: employer
+        flash.message = message(code: 'add.register', default: 'Ponto batido as {0}', args: [currentDate])
+        redirect view: "/show", model: employer
     }
 
     @Transactional

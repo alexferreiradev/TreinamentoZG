@@ -24,9 +24,10 @@ class HourRegister {
 
     HourRegister(Employer employer, Date dateCreated) {
         this.employer = employer
-        status = HourRegisterStatus.REQUESTED
+        this.status = HourRegisterStatus.REQUESTED
         this.dateCreated = dateCreated
     }
+
     static mapping = {
         status enumType:"ordinal"
         autoTimestamp false
@@ -36,12 +37,12 @@ class HourRegister {
         manageTime nullable: true
         manager  nullable: true
         employer nullable: false
-        lastUpdate nullable: true
+        lastUpdated nullable: true
         reason nullable: true
     }
 
     def beforeUpdate() {
-        lastUpdate = new Date()
+        lastUpdated = new Date()
     }
 
 }

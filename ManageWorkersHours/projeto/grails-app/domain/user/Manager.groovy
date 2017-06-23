@@ -8,6 +8,7 @@ class Manager extends User{
     String enterprise
 
     static constraints = {
+        enterprise nullable: false
     }
 
     static mapping = {
