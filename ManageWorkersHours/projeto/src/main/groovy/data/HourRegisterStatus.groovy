@@ -9,4 +9,9 @@ enum HourRegisterStatus {
     APPROOVED(1),
     REJECTED(2),
 
+    int value;
+
+    HourRegisterStatus(int value) {
+        this.value = value
+    }
 }
