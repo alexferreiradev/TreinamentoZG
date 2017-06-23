@@ -1,5 +1,8 @@
 package user
 
+import data.HourRegisterStatus
+import projeto.HourRegister
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -19,6 +22,15 @@ class EmployerController {
 
     def create() {
         respond new Employer(params)
+    }
+
+    def addRegister(Employer employer){
+        Date currentDate = new Date()
+        HourRegister register = new HourRegister(employer, currentDate)
+        register.save()
+
+        flash.message = message(code: 'default.created.message', default: 'Ponto batido as ', args: [currentDate])
+        render view: "show", model: employer
     }
 
     @Transactional
