@@ -30,7 +30,7 @@ class EmployerController {
         register.save flush:true
 
         flash.message = message(code: 'add.register', default: 'Ponto batido as {0}', args: [currentDate])
-        redirect view: "/show", model: employer
+        render(view: "show", model: employer)
     }
 
     @Transactional
