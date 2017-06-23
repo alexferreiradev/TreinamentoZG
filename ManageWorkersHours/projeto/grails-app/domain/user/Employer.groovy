@@ -1,7 +1,9 @@
 package user
 
+import groovy.transform.EqualsAndHashCode
 import projeto.HourRegister
 
+@EqualsAndHashCode
 class Employer extends User{
 
     String job
