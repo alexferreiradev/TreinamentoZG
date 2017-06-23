@@ -72,8 +72,6 @@
                     </g:each>
                 </ul>
             </div>
-
-            <g:link controller="user" action="login" >Login</g:link>
         </section>
     </div>
 
