@@ -44,6 +44,7 @@ class EmployerService {
 
     /**
      * Adiciona uma requisição de ponto atrasado.
+     *
      * @param user - usuário
      * @param register
      * @throws NotSupportedException - caso a data do ponto seja no futuro.
@@ -71,7 +72,7 @@ class EmployerService {
      * @param user
      */
     float getSalary(Configuration configuration, Employer employer, int month) {
-        List<HourRegister> registers = getHourByMonth(configuration, employer, month)
+        List<HourRegister> registers = getHourByInterval(configuration, employer, month)
         float balance = getHoursBalance(configuration, employer, registers)
 
         if (balance == 0){
@@ -97,7 +98,7 @@ class EmployerService {
      * @param offset
      * @return - lista de registros do funcionário
      */
-    List<HourRegister> getHourByMonth(Configuration configuration, Employer employer, int month, int offset=1) {
+    List<HourRegister> getHourByInterval(Configuration configuration, Employer employer, int month, int offset=1) {
         DetachedCriteria<HourRegister> query = HourRegister.where {
             employer == employer
             DateTimeUtils.getDatePart(dateTime, Calendar.MONTH) == month
@@ -110,11 +111,11 @@ class EmployerService {
         currentDate.set(Calendar.MONTH, month)
         currentDate.set(Calendar.DATE, endDay)
 
-        Calendar startCalendar = currentDate.clone()
-        startCalendar.roll(Calendar.MONTH, -1)
-        Date startDate = new Date(startCalendar)
+        Calendar startDate = currentDate.clone()
+        startDate.roll(Calendar.MONTH, -1)
+        Date finalDate = new Date(startDate)
         Date endDate = new Date(currentDate)
 
-        return HourRegister.findAllByEmployerAndManageTimeBetween(employer, startDate, endDate, [offset: offset, max: 10])
+        return HourRegister.findAllByEmployerAndManageTimeBetween(employer, finalDate, endDate, [offset: offset, max: 10])
     }
 }
