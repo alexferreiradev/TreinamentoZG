@@ -11,6 +11,8 @@ class Configuration {
     int registerEndDay
     int workWeekDays
     int minHourPerDay
+    Date dateCreated
+    Date lastUpdate
 
     static constraints = {
     }
