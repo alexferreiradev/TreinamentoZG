@@ -1,74 +1,82 @@
 package projeto
 
+import data.HourRegisterStatus
 import grails.gorm.DetachedCriteria
 import grails.transaction.Transactional
 import org.grails.datastore.mapping.query.api.BuildableCriteria
+import user.Employer
 import user.User
 
 @Transactional
 class ManagerService {
 
-//    listPontosRequisitados
-//    aprovar ponto
-//    rejeitar ponto
-//    listPontosByDay
-//    filtrarPontosByFunc
-//    listPontosByFunc
-//    getListTotalHoursByDay
-//    getTotalHorasTrabalhadasByPeriodo
-//    getSalarioFuncionário
-//    edita_config
+    EmployerService employerService
 
-
+    /**
+     * Filtra todos registros de pontos com estado de requisitado
+     *
+     * @return
+     */
     List<HourRegister> findAllRegistersRequested() {
         DetachedCriteria<HourRegister> query = HourRegister.where {
-            status == 0
+            status == HourRegisterStatus.REQUESTED
         }
 
         return query.findAll()
     }
 
+    /**
+     * Marca como aprovado um registro de ponto
+     *
+     * @param manager
+     * @param register
+     * @return
+     */
     HourRegister approveRegister(User manager, HourRegister register) {
         setRegisterStatus(manager, register, HourRegister.APPROVED_STATUS)
         return register.save()
     }
 
+    /**
+     * Marca como rejeitado um registro de ponto
+     * @param manager
+     * @param register
+     * @return
+     */
     HourRegister rejectRegister(User manager, HourRegister register) {
         setRegisterStatus(manager, register, HourRegister.REJECTED_STATUS)
         return register.save()
     }
 
-    List<HourRegister> listHourRegisters(User employer, Date date) {
-        DetachedCriteria<HourRegister> query = HourRegister.where {
-            employer == employer
-            dateTime == date
-        }
-
-        return query.findAll()
+    /**
+     * Lista todos registros de pontos de um funcionário
+     *
+     * @param employer
+     * @param date
+     * @return
+     */
+    List<HourRegister> listHourRegisters(Employer employer) {
+        return HourRegister.findAllByEmployer(employer)
     }
 
-    List<HourRegister> listRegistersByInterval(Configuration configuration) {
+    /**
+     * Lista todos registros de pontos do mês
+     *
+     * @param configuration
+     * @return
+     */
+    List<HourRegister> listRegistersByMonth(Configuration configuration) {
         Calendar calendar = Calendar.getInstance(Locale.getDefault())
         int currentMonth = calendar.get(Calendar.MONTH)
         return HourRegister.findAllByDateTimeLike("")
     }
 
-    Float calcEmployerSalary(User employer, Configuration configuration) {
-        // TODO calcular horas trabalhadas pelo func
-        int workWeekDays = configuration.workWeekDays
-        int totalDays = 0;
-        if (workWeekDays == Configuration.WEEK_SELECT_MON_FRI) {
-            totalDays = 5
-        } else {
-            totalDays = 6
-        }
-
-        float salaryPerHour = salary / (totalDays * 4 * configuration.minHourPerDay)
-        // TODO multiplicar horas pelo salario/hora do func
-
-        return 0
-    }
-
+    /**
+     * Altera alguma configuração do sistema
+     *
+     * @param configuration
+     * @return
+     */
     Configuration setConfig(Configuration configuration) {
         return configuration.save()
     }
