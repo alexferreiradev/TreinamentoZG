@@ -1,8 +1,5 @@
 package user
 
-import groovy.transform.EqualsAndHashCode
-
-@EqualsAndHashCode
 abstract class User {
 
     static mapping = {
@@ -17,7 +14,7 @@ abstract class User {
     String password
     String address
     Date dateCreated
-    Date lastUpdate
+    Date lastUpdated
 
     static constraints = {
         lastName nullable: true

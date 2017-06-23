@@ -12,7 +12,7 @@ class Configuration {
     int workWeekDays
     int minHourPerDay
     Date dateCreated
-    Date lastUpdate
+    Date lastUpdated
 
     static constraints = {
     }

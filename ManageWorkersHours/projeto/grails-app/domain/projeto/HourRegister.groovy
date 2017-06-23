@@ -20,7 +20,7 @@ class HourRegister {
     Date manageTime
     String reason
     Date dateCreated
-    Date lastUpdate
+    Date lastUpdated
 
     HourRegister(Employer employer, Date dateCreated) {
         this.employer = employer
@@ -29,6 +29,7 @@ class HourRegister {
     }
     static mapping = {
         status enumType:"ordinal"
+        autoTimestamp false
     }
 
     static constraints = {
@@ -37,6 +38,10 @@ class HourRegister {
         employer nullable: false
         lastUpdate nullable: true
         reason nullable: true
+    }
+
+    def beforeUpdate() {
+        lastUpdate = new Date()
     }
 
 }
