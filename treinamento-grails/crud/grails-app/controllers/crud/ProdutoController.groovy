@@ -8,6 +8,8 @@ class ProdutoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    private Produto novoProd
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Produto.list(params), model:[produtoCount: Produto.count()]
@@ -37,13 +39,13 @@ class ProdutoController {
 
         produto.save flush:true
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'produto.label', default: 'Produto'), produto.id])
-                redirect produto
-            }
-            '*' { respond produto, [status: CREATED] }
-        }
+        flash.message = message(code: 'default.created.message', args: [message(code: 'produto.label', default: 'Produto'), produto.id])
+        redirect(action: "show_nova", id: produto.id)
+    }
+
+    def show_nova(Produto produto){
+        novoProd = new Produto(id: 70, nome: "teste")
+        respond this.novoProd, view: 'nova'
     }
 
     def edit(Produto produto) {
@@ -66,13 +68,8 @@ class ProdutoController {
 
         produto.save flush:true
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'produto.label', default: 'Produto'), produto.id])
-                redirect produto
-            }
-            '*'{ respond produto, [status: OK] }
-        }
+        flash.message = message(code: 'default.updated.message', args: [message(code: 'produto.label', default: 'Produto'), produto.id])
+        redirect(action: "show", id: produto.id)
     }
 
     @Transactional
