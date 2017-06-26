@@ -16,11 +16,18 @@
 </div>
 
 <div>
+    Nome: ${model.name}
+    CPF: ${model.cpf}
+    Email: ${model.email}
+</div>
+
+<div>
     <ul>
         <li><g:link controller="hourRegister" action="allRequestedRegisters">Pontos requisitados</g:link></li>
         <li><g:link controller="employer" >Gerenciar funcionários</g:link></li>
         <li><g:link controller="hourRegister" >Gerenciar pontos</g:link></li>
     </ul>
 </div>
+
 </body>
 </html>
