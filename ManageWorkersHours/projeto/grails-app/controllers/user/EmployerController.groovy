@@ -1,6 +1,10 @@
 package user
 
+import data.EmployerDTO
 import data.HourRegisterStatus
+import projeto.Configuration
+import projeto.ConfigurationService
+import projeto.EmployerService
 import projeto.HourRegister
 
 import static org.springframework.http.HttpStatus.*
@@ -9,11 +13,24 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class EmployerController {
 
+    EmployerService employerService
+    ConfigurationService confService
+    private Configuration mConfig = confService.getCurrentConfig()
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Employer.list(params), model:[employerCount: Employer.count()]
+    def index() {
+        String idUser = session.user
+        EmployerDTO empDTO = new EmployerDTO()
+        Employer employer = Employer.findById(idUser)
+        empDTO.id = employer.id
+        empDTO.cpf = employer.cpf
+        empDTO.name = employer.name
+        empDTO.email = employer.userEmail
+        empDTO.hourBalance = employerService.getHoursBalance(mConfig, employer)
+        empDTO.totalDayHourRegisters = employerService.getTotalDayHours(employer)
+
+        respond model: [employerDTO: empDTO]
     }
 
     def show(Employer employer) {
