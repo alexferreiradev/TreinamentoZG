@@ -33,6 +33,10 @@ class EmployerController {
         render(view: "show", model: employer)
     }
 
+    def showAddLateRegister(Employer employer){
+        redirect view: "add_late_register", model: employer
+    }
+
     @Transactional
     def save(Employer employer) {
         if (employer == null) {
