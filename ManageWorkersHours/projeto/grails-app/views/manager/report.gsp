@@ -16,16 +16,23 @@
     </ul>
 </div>
 
-<div id="list-employer" class="content scaffold-list" role="main">
-    <h1><g:message code="default.list.label" args="[entityName]"/></h1>
-    <g:if test="${flash.message}">
-        <div class="message" role="status">${flash.message}</div>
-    </g:if>
-    <f:table collection="${employerList}"/>
+<div>
+    Relatório de Funcionário
 
-    <div class="pagination">
-        <g:paginate total="${employerCount ?: 0}"/>
-    </div>
+    Nome: ${model.name}
+    Salário a receber: ${model.salary}
+    Carga horária esperada: ${model.hourExpected}
+    Total de horas: ${model.totalHours}
+    Faltas: ${model.totalFault}
+
+    <g:link controller="hourRegister" >Lista de pontos</g:link>
+
+</div>
+
+<div>
+    Horas diárias
+
+    Quadro em JS ou lista de horas por dia
 </div>
 </body>
 </html>
