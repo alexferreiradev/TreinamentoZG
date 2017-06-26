@@ -1,6 +1,6 @@
 package user
 
-abstract class User {
+abstract class User extends SecUser{
 
     static mapping = {
         tablePerHierarchy false  // avoid creating the base_domain table
@@ -11,7 +11,6 @@ abstract class User {
     String lastName
     String cpf
     String userEmail
-    String password
     String address
     Date dateCreated
     Date lastUpdated
