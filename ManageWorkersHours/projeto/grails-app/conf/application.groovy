@@ -1,5 +1,3 @@
-
-
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'user.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'user.SecUserSecRole'
@@ -26,3 +24,14 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugins.springsecurity.interceptUrlMap = [
+		'/timeline':         ['ROLE_USER'],
+		'/person/*':         ['IS_AUTHENTICATED_REMEMBERED'],
+		'/post/followAjax':  ['ROLE_USER'],
+		'/post/addPostAjax': ['ROLE_USER', 'IS_AUTHENTICATED_FULLY'],
+		'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+
+grails.plugin.springsecurity.rememberMe.persistent = true
+grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'user.PersistentLogin'
