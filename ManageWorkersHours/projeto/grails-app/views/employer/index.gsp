@@ -18,15 +18,14 @@
 
 <div>
     Informações <br>
-    Nome: ${model.name}
-    CPF: ${model.cpf}
-    Email: ${model.email}
+    Nome: ${employerDTO.name}
+    CPF: ${employerDTO.cpf}
+    Email: ${employerDTO.email}
 
 </div>
 
-
 <div>
-    Horas do mês: ${model.balanço}
+    Horas do mês: ${employerDTO.balanço}
 </div>
 
 <div>
@@ -35,7 +34,7 @@
 
     <div> linha</div>
     <div>
-        <g:link action="showAddLateRegister" >Registrar ponto atrasado</g:link></g> <g:link action="addRegister" params="${model.id}" >Registar Agora</g:link>
+        <g:link action="showAddLateRegister" >Registrar ponto atrasado</g:link></g> <g:link action="addRegister" params="${employerDTO.id}" >Registar Agora</g:link>
     </div>
 </div>
 </body>

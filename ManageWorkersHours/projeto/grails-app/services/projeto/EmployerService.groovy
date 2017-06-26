@@ -35,6 +35,10 @@ class EmployerService {
      * @return
      */
     float getHoursBalance(Configuration configuration, Employer employer, List<HourRegister> registers){
+        if (registers == null){
+            registers = HourRegister.findAllByEmployer(employer)
+        }
+
         // todo extrair intervalos
 
         // todo iterar entre intervalos e somar horas
@@ -117,5 +121,10 @@ class EmployerService {
         Date endDate = new Date(currentDate)
 
         return HourRegister.findAllByEmployerAndManageTimeBetween(employer, finalDate, endDate, [offset: offset, max: 10])
+    }
+
+    List<Float> getTotalDayHours(Employer employer) {
+
+        return null
     }
 }

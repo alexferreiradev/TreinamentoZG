@@ -25,7 +25,7 @@ class HourRegisterController {
 
     def allRequestedRegisters(){
         List<HourRegister> requestedRegisters = HourRegister.findAllByStatus(HourRegisterStatus.REQUESTED)
-        render view: "index", model: requestedRegisters
+        render view: "index", hourRegister: requestedRegisters
     }
 
     @Transactional
