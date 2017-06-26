@@ -109,29 +109,39 @@ environments:
         dataSource:
             dbCreate: create-drop
             url: jdbc:postgresql://127.0.0.1:5432/register_hours
+        logging:
+            jul:
+                usebridge: true
+            plugin:
+                springsecurity:
+                    debug:
+                        useFilter: true
     test:
         dataSource:
             dbCreate: create-drop
             url: jdbc:postgresql://127.0.0.1:5432/register_hours
-#    production:
-#        dataSource:
-#            dbCreate: none
-#            url: jdbc:mysql://127.0.0.1:3306/register_hours
-#            properties:
-#                jmxEnabled: true
-#                initialSize: 5
-#                maxActive: 50
-#                minIdle: 5
-#                maxIdle: 25
-#                maxWait: 10000
-#                maxAge: 600000
-#                timeBetweenEvictionRunsMillis: 5000
-#                minEvictableIdleTimeMillis: 60000
-#                validationQuery: SELECT 1
-#                validationQueryTimeout: 3
-#                validationInterval: 15000
-#                testOnBorrow: true
-#                testWhileIdle: true
-#                testOnReturn: false
-#                jdbcInterceptors: ConnectionState
-#                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+    production:
+        dataSource:
+            dbCreate: none
+            url: jdbc:mysql://127.0.0.1:3306/register_hours
+            properties:
+                jmxEnabled: true
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: SELECT 1
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                jdbcInterceptors: ConnectionState
+                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+        logging:
+            jul:
+                usebridge: true
