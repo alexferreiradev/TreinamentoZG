@@ -1,5 +1,6 @@
 package projeto
 
+import data.WorkInterval
 import grails.gorm.DetachedCriteria
 import grails.transaction.Transactional
 import org.h2.util.DateTimeUtils
@@ -39,11 +40,27 @@ class EmployerService {
             registers = HourRegister.findAllByEmployer(employer)
         }
 
-        // todo extrair intervalos
+        if (registers.size() % 2 != 0){
+            // TODO tratar a quantidade de registros invalida
+        }
 
-        // todo iterar entre intervalos e somar horas
+        List<WorkInterval> intervals = new ArrayList<>()
+        Iterator<HourRegister> iterator = registers.iterator()
+        while (iterator.hasNext()){
+            HourRegister register = iterator.next()
+            if (iterator.hasNext()){
+                WorkInterval interval = new WorkInterval(startWork: register, stopWork: iterator.next())
+                intervals.add(interval)
+            }
+        }
 
-        return 0;
+        int workHours = employer.workHours
+        intervals.forEach {
+            workHours -= it.calcTotalWorkHour()
+        }
+
+
+        return workHours;
     }
 
     /**
@@ -55,8 +72,9 @@ class EmployerService {
      */
     void addLateRegister(HourRegister register) throws NotSupportedException {
         if (!register?.reason?.isEmpty()){
-            // todo add validacao de justificativa
             addRegister(register)
+        } else {
+            throw new NotSupportedException("Não há justificativa para tentativa de salvar um ponto atrasado")
         }
     }
 
@@ -76,24 +94,80 @@ class EmployerService {
      * @param user
      */
     float getSalary(Configuration configuration, Employer employer, int month) {
-        List<HourRegister> registers = getHourByInterval(configuration, employer, month)
-        float balance = getHoursBalance(configuration, employer, registers)
+        int hourPerMonth = employer.workHours * 20
+        float hourValue = employer.salary / hourPerMonth
+        float extraHourValue = hourValue + (hourValue * 0.2) // salario/hora para hora extra (apos 8h e nao noturno)
+        float nightHourValue = extraHourValue + (extraHourValue * 0.5) // salario/hora para hora noturna (somente apos 22 e antes das 5)
+        float weekendExtraHourValue = hourValue * 2 // salario/hora para hora extra (dos finais de semana)
+        float finalSalary = 0
 
-        if (balance == 0){
-            return employer.salary
+        Float totalHours = getTotalNormalHours()
+        float totalWeekendHours = getTotalWeekendHours()
+        float totalNightHours = getTotalNightHours()
+
+        if (totalWeekendHours > 0) {
+            totalHours -= totalWeekendHours
+            finalSalary += (totalWeekendHours * weekendExtraHourValue)
         }
 
-        if (balance > 0){
-            // todo calcular salario/hora
-            // todo calcular adicional
+        finalSalary = addNightExtraSalary(totalNightHours, finalSalary, nightHourValue)
+
+        if (totalHours > hourPerMonth){ // extras sem levar consideracao feriado e fds
+            finalSalary += hourPerMonth * hourValue
+            finalSalary += (totalHours - hourPerMonth) * extraHourValue
         } else {
-            // todo verificar se tem dia que ele faltou
-            // todo calcular salario/hora
-            // todo calcular redução
+            finalSalary += totalHours * hourValue
         }
+
+        return finalSalary
+    }
+
+    private float addNightExtraSalary(float totalNightHours, float finalSalary, float nightHourValue) {
+        if (totalNightHours > 0) {
+            finalSalary += (totalNightHours * nightHourValue)
+        }
+        return finalSalary
+    }
+
+    private float getTotalNightHours() {
+        List<Float> nightHoursPerCurrentMonth = getTotalDayNightHoursPerCurrentMonth()
+        float totalNightHours = 0
+        nightHoursPerCurrentMonth.each {
+            totalNightHours += it
+        }
+        return totalNightHours
+    }
+
+    private float getTotalWeekendHours() {
+        List<Float> weekendHours = getTotalDayWeekendHoursPerCurrentMonth()
+        float totalWeekendHours = 0
+        weekendHours.each {
+            totalWeekendHours += it
+        }
+        return totalWeekendHours
+    }
+
+    private float getTotalNormalHours() {
+        List<Float> totalDayHours = getTotalNormalHours()
+        float totalHours = 0
+        totalDayHours.each {
+            totalHours += it
+        }
+        return totalHours
     }
 
     /**
+     * Horas trabalhadas em finais de semana
+     * @return
+     */
+    private List<Float> getTotalDayWeekendHoursPerCurrentMonth() {
+        null
+    }
+
+    List<Float> getTotalDayNightHoursPerCurrentMonth() {
+        return null
+    }
+/**
      * Horas trabalhadas por um funcionário durante um certo período fechado
      *
      * @param configuration
@@ -123,7 +197,13 @@ class EmployerService {
         return HourRegister.findAllByEmployerAndManageTimeBetween(employer, finalDate, endDate, [offset: offset, max: 10])
     }
 
-    List<Float> getTotalDayHours(Employer employer) {
+    /**
+     * Recupera o total de horas normais feitas por dia, no mes atual
+     *
+     * @param employer
+     * @return
+     */
+    List<Float> getTotalDayHoursPerCurrentMonth(Employer employer) {
 
         return null
     }
