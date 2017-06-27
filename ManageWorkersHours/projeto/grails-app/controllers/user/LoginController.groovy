@@ -1,6 +1,7 @@
 package user
 
 import grails.converters.JSON
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.SpringSecurityUtils
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
@@ -22,7 +23,7 @@ class LoginController {
 	/**
 	 * Dependency injection for the springSecurityService.
 	 */
-	def springSecurityService
+	SpringSecurityService springSecurityService
 
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
@@ -88,7 +89,7 @@ class LoginController {
 	 */
 	def authfail = {
 
-		def username = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY]
+		def username = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY]
 		String msg = ''
 		def exception = session[WebAttributes.AUTHENTICATION_EXCEPTION]
 		if (exception) {
