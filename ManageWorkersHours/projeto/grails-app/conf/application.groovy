@@ -23,15 +23,22 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**/favicon.ico', filters: 'none'],
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
+// grails.plugin.springsecurity.filterChain.chainMap = [
+//	[pattern: '/**',             filters: 'JOINED_FILTERS']
+//]
 
-grails.plugin.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugin.springsecurity.securityConfigType = SecurityConfigType.Annotation
 grails.plugin.springsecurity.interceptUrlMap = [
-		'/timeline':         ['ROLE_USER'],
-		'/person/*':         ['IS_AUTHENTICATED_REMEMBERED'],
-		'/post/followAjax':  ['ROLE_USER'],
-		'/post/addPostAjax': ['ROLE_USER', 'IS_AUTHENTICATED_FULLY'],
-		'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']
+        '/**':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/timeline':         ['ROLE_USER'],
+        '/person/*':         ['IS_AUTHENTICATED_REMEMBERED'],
+        '/post/followAjax':  ['ROLE_USER'],
+        '/post/addPostAjax': ['ROLE_USER', 'IS_AUTHENTICATED_FULLY'],
 ]
 
-grails.plugin.springsecurity.rememberMe.persistent = true
-grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'user.PersistentLogin'
+//grails.plugin.springsecurity.interceptUrlMap = [
+//		'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']
+//]
+
+//grails.plugin.springsecurity.rememberMe.persistent = true
+//grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'user.PersistentLogin'
