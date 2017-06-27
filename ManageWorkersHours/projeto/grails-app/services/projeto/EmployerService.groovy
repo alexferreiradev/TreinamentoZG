@@ -129,7 +129,7 @@ class EmployerService {
         return finalSalary
     }
 
-    private float getTotalNightHours() {
+    private float getTotalNightHours(Employer employer) {
         List<Float> nightHoursPerCurrentMonth = getTotalDayNightHoursPerCurrentMonth()
         float totalNightHours = 0
         nightHoursPerCurrentMonth.each {
@@ -138,8 +138,8 @@ class EmployerService {
         return totalNightHours
     }
 
-    private float getTotalWeekendHours() {
-        List<Float> weekendHours = getTotalDayWeekendHoursPerCurrentMonth()
+    private float getTotalWeekendHours(Employer employer) {
+        List<Float> weekendHours = getTotalDayWeekendHoursPerCurrentMonth(null)
         float totalWeekendHours = 0
         weekendHours.each {
             totalWeekendHours += it
@@ -147,12 +147,13 @@ class EmployerService {
         return totalWeekendHours
     }
 
-    private float getTotalNormalHours() {
-        List<Float> totalDayHours = getTotalNormalHours()
+    private float getTotalNormalHours(Employer employer) {
+        List<Float> totalDayHours = getTotalNormalHours(employer)
         float totalHours = 0
         totalDayHours.each {
             totalHours += it
         }
+
         return totalHours
     }
 
@@ -160,12 +161,20 @@ class EmployerService {
      * Horas trabalhadas em finais de semana
      * @return
      */
-    private List<Float> getTotalDayWeekendHoursPerCurrentMonth() {
-        null
+    private List<Float> getTotalDayWeekendHoursPerCurrentMonth(Employer employer = null) {
+        return new ArrayList<Float>()
     }
 
-    List<Float> getTotalDayNightHoursPerCurrentMonth() {
-        return null
+    List<Float> getTotalDayNightHoursPerCurrentMonth(Employer employer = null) {
+        Calendar calendar = Calendar.getInstance(Locale.getDefault())
+        DetachedCriteria<HourRegister> where = HourRegister.where {
+            employer == employer
+            new Date(dateCreated).time >= calendar.time
+            calendar.get(Calendar.HOUR) >= 22
+            calendar.get(Calendar.HOUR) <= 05
+        }
+
+        return where.findAll()
     }
 /**
      * Horas trabalhadas por um funcionário durante um certo período fechado
@@ -204,7 +213,14 @@ class EmployerService {
      * @return
      */
     List<Float> getTotalDayHoursPerCurrentMonth(Employer employer) {
+        Calendar calendar = Calendar.getInstance(Locale.getDefault())
+        DetachedCriteria<HourRegister> where = HourRegister.where {
+            employer == employer
+            new Date(dateCreated).time >= calendar.time
+            calendar.get(Calendar.HOUR) >= 8
+            calendar.get(Calendar.HOUR) <= 18
+        }
 
-        return null
+        return where.findAll()
     }
 }

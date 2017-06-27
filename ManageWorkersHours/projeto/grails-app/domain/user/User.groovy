@@ -3,6 +3,7 @@ package user
 abstract class User {
 
     String name
+    String username
     String lastName
     String cpf
     String userEmail

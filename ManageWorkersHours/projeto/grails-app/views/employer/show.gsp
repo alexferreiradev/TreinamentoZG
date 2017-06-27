@@ -30,6 +30,10 @@
             <g:link action="addRegister" resource="${this.employer}" >
                 <g:message code="employer.add.register" default="Bater ponto"/>
             </g:link>
+
+            <g:link action="index" resource="${this.employer}" >
+                <g:message code="employer.add.register" default="Home func"/>
+            </g:link>
         </fieldset>
     </g:form>
 </div>
