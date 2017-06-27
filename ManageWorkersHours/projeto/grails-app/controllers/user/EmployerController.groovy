@@ -19,10 +19,13 @@ class EmployerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index() {
-        String idUser = session.user
+    def index(Employer employer) {
+        respond Employer.list(params), model:[employerCount: Employer.count()]
+    }
+
+    def home(){
+        // todo add recuperacao de employer pela sessao
         EmployerDTO empDTO = new EmployerDTO()
-        Employer employer = Employer.findById(idUser)
         empDTO.id = employer.id
         empDTO.cpf = employer.cpf
         empDTO.name = employer.name
