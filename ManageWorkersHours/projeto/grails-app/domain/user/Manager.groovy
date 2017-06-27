@@ -12,6 +12,6 @@ class Manager extends User{
     }
 
     static mapping = {
-
+        autoTimestamp false
     }
 }
