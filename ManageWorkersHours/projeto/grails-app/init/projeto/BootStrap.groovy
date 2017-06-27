@@ -16,16 +16,17 @@ class BootStrap {
 
         def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
                 username: 'admin',
-                password: springSecurityService.encodePassword('admin'),
+                password: 'admin',
                 enabled: true,
         )
+
         adminUser.validate()
         adminUser.save(failOnError: true)
         Manager manager = new Manager(
                 name: "ADM",
                 userEmail: "arf92liv.omc",
                 username: 'admin',
-                password: springSecurityService.encodePassword('admin'),
+                password: 'admin',
                 enabled: true,
                 enterprise: "ZG solucoes"
         )
