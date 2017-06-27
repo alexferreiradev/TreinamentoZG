@@ -24,8 +24,8 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
-grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
-grails.plugins.springsecurity.interceptUrlMap = [
+grails.plugin.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugin.springsecurity.interceptUrlMap = [
 		'/timeline':         ['ROLE_USER'],
 		'/person/*':         ['IS_AUTHENTICATED_REMEMBERED'],
 		'/post/followAjax':  ['ROLE_USER'],
