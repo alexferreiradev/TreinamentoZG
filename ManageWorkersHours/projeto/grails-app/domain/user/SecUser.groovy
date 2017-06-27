@@ -7,7 +7,7 @@ import grails.compiler.GrailsCompileStatic
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
-class SecUser implements Serializable {
+abstract class SecUser implements Serializable {
 
     private static final long serialVersionUID = 1
 
@@ -25,9 +25,15 @@ class SecUser implements Serializable {
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
+        accountExpired nullable: true
+        accountLocked nullable: true
+        passwordExpired nullable: true
+        enabled nullable: true
     }
 
     static mapping = {
 	    password column: '`password`'
+        tablePerHierarchy false  // avoid creating the base_domain table
+        tablePerConcreteClass true
     }
 }
