@@ -1,14 +1,32 @@
 package projeto
 
-import user.Employer
+import grails.plugin.springsecurity.SpringSecurityService
 import user.Manager
-import user.User
+import user.SecRole
+import user.SecUserSecRole
 
 class BootStrap {
 
+    SpringSecurityService springSecurityService
+
     def init = { servletContext ->
-        new Manager(name: "Adm", userEmail: "arf92@live.com", password: "adm123", enterprise: "ZG_SOLUCOES").save()
-        new Employer(name: "TesteFunc", lastName: "LastName", userEmail: "arf92@live.com", password: "123", workHours: 8, salary: 3000.00, job: "Desenvolvedor").save()
+        def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
+        def adminRole = SecRole.findByAuthority('ROLE_ADMIN') ?: new SecRole(authority: 'ROLE_ADMIN').save(failOnError: true)
+
+        def adminUser = Manager.findByUsername('admin') ?: new Manager(
+                name: "ADM",
+//                userEmail: "arf92liv.omc",
+                username: 'admin',
+                password: springSecurityService.encodePassword('admin'),
+                enabled: true,
+                enterprise: "ZG solucoes"
+        )
+        adminUser.validate()
+        adminUser.save(failOnError: true)
+
+        if (!adminUser.authorities.contains(adminRole)) {
+            SecUserSecRole.create adminUser, adminRole
+        }
     }
 
     def destroy = {
