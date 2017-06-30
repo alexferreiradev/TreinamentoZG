@@ -6,18 +6,24 @@ grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'user.
 grails.plugin.springsecurity.rememberMe.persistent = true
 
 
+empyeeRole = RoleType.ROLE_EMPYEE.name
+admRole = RoleType.ROLE_ADM.name
 // Regras de acesso
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	[pattern: '/',               access: ['permitAll']],
-	[pattern: '/error',          access: ['permitAll']],
-	[pattern: '/index',          access: ['permitAll']],
-	[pattern: '/index.gsp',      access: ['permitAll']],
-	[pattern: '/shutdown',       access: ['permitAll']],
-	[pattern: '/assets/**',      access: ['permitAll']],
-	[pattern: '/**/js/**',       access: ['permitAll']],
-	[pattern: '/**/css/**',      access: ['permitAll']],
-	[pattern: '/**/images/**',   access: ['permitAll']],
-	[pattern: '/**/favicon.ico', access: ['permitAll']]
+		[pattern: '/',               access: ['permitAll']],
+		[pattern: '/error',          access: ['permitAll']],
+		[pattern: '/index',          access: ['permitAll']],
+		[pattern: '/index.gsp',      access: ['permitAll']],
+		[pattern: '/shutdown',       access: ['permitAll']],
+		[pattern: '/assets/**',      access: ['permitAll']],
+		[pattern: '/**/js/**',       access: ['permitAll']],
+		[pattern: '/**/css/**',      access: ['permitAll']],
+		[pattern: '/**/images/**',   access: ['permitAll']],
+		[pattern: '/**/favicon.ico', access: ['permitAll']],
+		[pattern: '/manager/**',        access: ['ROLE_ADM', 'IsFullyAuthenticated()']],
+		[pattern: '/employer/**',        access: 'ROLE_EMPYEE'],
+		[pattern: '/login/**',       access: ['permitAll']],
+		[pattern: '/logout/**',      access: ['permitAll']]
 ]
 
 // Filtros
@@ -37,10 +43,28 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
-grails.plugin.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [
-		'/manager/index':         [RoleType.ROLE_ADM],
-		'/employer/**':         [RoleType.ROLE_EMPYEE, RoleType.ROLE_ADM],
-		'/**':               ['IS_AUTHENTICATED_ANONYMOUSLY'],
-]
+		[pattern: '/',               access: ['permitAll']],
+		[pattern: '/error',          access: ['permitAll']],
+		[pattern: '/index',          access: ['permitAll']],
+		[pattern: '/index.gsp',      access: ['permitAll']],
+		[pattern: '/shutdown',       access: ['permitAll']],
+		[pattern: '/assets/**',      access: ['permitAll']],
+		[pattern: '/**/js/**',       access: ['permitAll']],
+		[pattern: '/**/css/**',      access: ['permitAll']],
+		[pattern: '/**/images/**',   access: ['permitAll']],
+		[pattern: '/**/favicon.ico', access: ['permitAll']],
+		[pattern: '/login',          access: ['permitAll']],
+		[pattern: '/login/**',       access: ['permitAll']],
+		[pattern: '/logout',         access: ['permitAll']],
+		[pattern: '/logout/**',      access: ['permitAll']],
 
+		[pattern: '/manager/**',      access: ['ROLE_ADM']],
+		[pattern: '/configuration/**',      access: ['ROLE_ADM']],
+
+		[pattern: '/employer/home',      access: ['ROLE_EMPYEE']],
+		[pattern: '/employer/**',      access: ['ROLE_ADM', 'ROLE_EMPYEE']],
+		[pattern: '/hourregister/create',      access: ['ROLE_EMPYEE']],
+		[pattern: '/hourregister/**',      access: ['ROLE_ADM', 'ROLE_EMPYEE']],
+]
