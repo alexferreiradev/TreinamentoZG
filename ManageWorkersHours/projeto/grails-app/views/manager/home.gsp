@@ -16,9 +16,11 @@
 </div>
 
 <div>
-    Nome: ${managerAdm.name}
-    CPF: ${managerAdm.cpf}
-    Email: ${managerAdm.email}
+    Nome: ${managerAdm.name} <br>
+    CPF: ${managerAdm.cpf} <br>
+    Email: ${managerAdm.email} <br>
+    <br>
+    <g:link action="edit" >editar Informações</g:link>
 </div>
 
 <div>
