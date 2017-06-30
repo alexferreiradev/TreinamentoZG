@@ -4,6 +4,7 @@ import data.HourRegisterStatus
 import grails.gorm.DetachedCriteria
 import grails.transaction.Transactional
 import user.Employer
+import user.Manager
 
 @Transactional
 class ManagerService {
@@ -30,7 +31,7 @@ class ManagerService {
      * @param register
      * @return
      */
-    HourRegister approveRegister(User manager, HourRegister register) {
+    HourRegister approveRegister(Manager manager, HourRegister register) {
         setRegisterStatus(manager, register, HourRegister.APPROVED_STATUS)
         return register.save()
     }
@@ -41,7 +42,7 @@ class ManagerService {
      * @param register
      * @return
      */
-    HourRegister rejectRegister(User manager, HourRegister register) {
+    HourRegister rejectRegister(Manager manager, HourRegister register) {
         setRegisterStatus(manager, register, HourRegister.REJECTED_STATUS)
         return register.save()
     }
@@ -79,7 +80,7 @@ class ManagerService {
         return configuration.save()
     }
 
-    private void setRegisterStatus(User manager, HourRegister register, int status) {
+    private void setRegisterStatus(Manager manager, HourRegister register, int status) {
         register.manager = manager
         register.manageTime = new Date()
         register.status = status
