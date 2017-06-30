@@ -8,6 +8,19 @@ import user.SecUserSecRole
 class BootStrap {
 
     def init = { servletContext ->
+        createRolesAndAdmUser()
+        createDefaultConfiguration()
+    }
+
+    private Configuration createDefaultConfiguration() {
+        new Configuration(
+                minHourPerDay: 8,
+                workWeekDays: 64,
+                registerEndDay: 25,
+        ).save()
+    }
+
+    private void createRolesAndAdmUser() {
         SecRole.findByAuthority(RoleType.ROLE_EMPYEE) ?: new SecRole(authority: RoleType.ROLE_EMPYEE).save(failOnError: true)
         SecRole adminRole = SecRole.findByAuthority(RoleType.ROLE_ADM) ?: new SecRole(authority: RoleType.ROLE_ADM).save(failOnError: true)
 
@@ -22,15 +35,6 @@ class BootStrap {
 
         adminUser.validate()
         adminUser.save(failOnError: true)
-//        Manager manager = new Manager(
-//                name: "ADM",
-//                userEmail: "arf92liv.omc",
-//                username: 'admin',
-//                password: 'admin',
-//                enabled: true,
-//                enterprise: "ZG solucoes"
-//        )
-//        manager.save()
 
         if (!adminUser.authorities.contains(adminRole)) {
             SecUserSecRole.create adminUser, adminRole
