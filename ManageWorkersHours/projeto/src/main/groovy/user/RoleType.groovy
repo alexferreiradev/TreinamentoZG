@@ -5,7 +5,7 @@ package user
  */
 enum RoleType {
 
-    ROLE_USER,
+    ROLE_EMPYEE,
     ROLE_ADM,
 
 }
