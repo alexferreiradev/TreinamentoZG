@@ -4,7 +4,7 @@ import groovy.transform.EqualsAndHashCode
 import projeto.HourRegister
 
 @EqualsAndHashCode
-class Employer extends User{
+class Employer extends SecUser{
 
     String job
     float salary

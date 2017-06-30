@@ -3,7 +3,7 @@ package user
 import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
-class Manager extends User{
+class Manager extends SecUser{
 
     String enterprise
 

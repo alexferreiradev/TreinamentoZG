@@ -11,6 +11,15 @@ class SecUser implements Serializable {
 
     private static final long serialVersionUID = 1
 
+    String name
+    String lastName
+    String email
+    String cpf
+    String address
+    Date dateCreated
+    Date lastUpdated
+
+    // Padrao do Spring Security
     String username
     String password
     boolean enabled = true
@@ -29,9 +38,18 @@ class SecUser implements Serializable {
         accountLocked nullable: true
         passwordExpired nullable: true
         enabled nullable: true
+        lastName nullable: true
+        cpf nullable: true
+        email nullable: true
+        address nullable: true
+        lastUpdated nullable: true
+        dateCreated nullable: true
     }
 
     static mapping = {
 	    password column: '`password`'
+        autoTimestamp false
+        tablePerHierarchy false  // avoid creating the base_domain table
+        tablePerConcreteClass true
     }
 }
