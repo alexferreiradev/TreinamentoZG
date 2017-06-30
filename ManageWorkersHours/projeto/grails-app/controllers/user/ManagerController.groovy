@@ -3,7 +3,6 @@ package user
 import grails.transaction.Transactional
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.transaction.interceptor.TransactionAspectSupport
-import projeto.Configuration
 
 import static org.springframework.http.HttpStatus.*
 
@@ -12,6 +11,10 @@ class ManagerController {
     def index() {
         String username = SecurityContextHolder.context.authentication.principal.username
         Manager manager = Manager.findByUsername(username)
+        if (!manager){
+            flash.message = "Login foi alterado, fazendo logoff"
+            return redirect (controller: "logoff")
+        }
         render model: [managerAdm: manager], view: "home"
     }
 
