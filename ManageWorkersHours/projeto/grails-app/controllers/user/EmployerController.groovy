@@ -29,7 +29,7 @@ class EmployerController {
         empDTO.id = employer.id
         empDTO.cpf = employer.cpf
         empDTO.name = employer.name
-        empDTO.email = employer.userEmail
+        empDTO.email = employer.email
         empDTO.hourBalance = employerService.getHoursBalance(mConfig, employer)
         empDTO.totalDayHourRegisters = employerService.getTotalDayHours(employer)
 

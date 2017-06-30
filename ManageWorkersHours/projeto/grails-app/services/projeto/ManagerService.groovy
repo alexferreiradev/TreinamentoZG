@@ -3,9 +3,7 @@ package projeto
 import data.HourRegisterStatus
 import grails.gorm.DetachedCriteria
 import grails.transaction.Transactional
-import org.grails.datastore.mapping.query.api.BuildableCriteria
 import user.Employer
-import user.User
 
 @Transactional
 class ManagerService {

@@ -4,7 +4,6 @@ import data.HourRegisterStatus
 import groovy.transform.EqualsAndHashCode
 import user.Employer
 import user.Manager
-import user.User
 
 import javax.persistence.EnumType
 import javax.persistence.Enumerated
