@@ -4,6 +4,7 @@ import grails.transaction.Transactional
 
 @Transactional
 class ConfigurationService {
+
     private Configuration currentConfig
 
     Configuration getCurrentConfig() {
