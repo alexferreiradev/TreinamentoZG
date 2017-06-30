@@ -1,7 +1,7 @@
 package user
 
 import data.EmployerDTO
-import data.HourRegisterStatus
+import org.springframework.security.core.context.SecurityContextHolder
 import projeto.Configuration
 import projeto.ConfigurationService
 import projeto.EmployerService
@@ -14,24 +14,25 @@ import grails.transaction.Transactional
 class EmployerController {
 
     EmployerService employerService
-    ConfigurationService confService
-    private Configuration mConfig = confService.getCurrentConfig()
+    ConfigurationService configurationService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Employer employer) {
-        respond Employer.list(params), model:[employerCount: Employer.count()]
+    def index() {
+        render model:[employerCount: Employer.count(), employeeList: Employer.list(params)],
+                view: "index"
     }
 
     def home(){
-        // todo add recuperacao de employer pela sessao
+        String username = SecurityContextHolder.context.authentication.principal.username
+        Employer employer = Employer.findByUsername(username)
+
         EmployerDTO empDTO = new EmployerDTO()
         empDTO.id = employer.id
         empDTO.cpf = employer.cpf
         empDTO.name = employer.name
         empDTO.email = employer.email
-        empDTO.hourBalance = employerService.getHoursBalance(mConfig, employer)
-        empDTO.totalDayHourRegisters = employerService.getTotalDayHours(employer)
+        empDTO.hourBalance = employerService.getHoursBalance(configurationService.currentConfig, employer)
 
         respond model: [employerDTO: empDTO]
     }
