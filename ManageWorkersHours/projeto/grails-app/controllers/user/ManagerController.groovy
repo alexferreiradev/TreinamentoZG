@@ -18,44 +18,44 @@ class ManagerController {
     def list() {
         render view: "index",
                 model:[managerCount: Manager.count(),
-                       managerList: Employer.list(params)]
+                       managerList: Manager.list(params)]
     }
 
-    def show(Configuration configuration) {
-        respond configuration
+    def show(Manager manager) {
+        render model: [managerAdm: manager], view: "home"
     }
 
     def create() {
-        respond new Configuration(params)
+        respond new Manager()
+    }
+
+    def edit(Manager manager) {
+        respond manager
     }
 
     @Transactional
-    def save(Configuration configuration) {
-        if (configuration == null) {
+    def save(Manager manager) {
+        if (manager == null) {
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()
             notFound()
             return
         }
 
-        if (configuration.hasErrors()) {
+        if (manager.hasErrors()) {
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly()
-            respond configuration.errors, view:'create'
+            respond manager.errors, view:'create'
             return
         }
 
-        configuration.save flush:true
+        manager.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'configuration.label', default: 'Configuration'), configuration.id])
-                redirect configuration
+                flash.message = message(code: 'default.created.message', args: [message(code: 'manager.label', default: 'Configuration'), manager.id])
+                redirect manager
             }
-            '*' { respond configuration, [status: CREATED] }
+            '*' { respond manager, [status: CREATED] }
         }
-    }
-
-    def edit(Manager manager) {
-        respond manager
     }
 
     @Transactional
