@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'hourRegister.label', default: 'HourRegister')}" />
+        <g:set var="entityName" value="${message(code: 'hourRegister.label', default: 'Funcionario')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -18,10 +18,10 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${hourRegisterList}" />
+            <f:table collection="${employeeList}" />
 
             <div class="pagination">
-                <g:paginate total="${hourRegisterCount ?: 0}" />
+                <g:paginate total="${employeeCount ?: 0}" />
             </div>
         </div>
     </body>
